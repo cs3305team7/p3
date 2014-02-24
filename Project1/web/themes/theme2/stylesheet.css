@@ -1,0 +1,123 @@
+/**  start of index.html design**/
+body
+{
+	background-color: #000000;
+}
+#wrapper
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 760px;
+	background-color: #FFFFFF;
+}
+
+header
+{
+	border:2px solid black;
+	border-radius:0 0 12px 12px;	
+	text-align: center;	
+	background-color: grey;
+}	
+#edit,p{
+	padding-left: 15px;
+}
+header img
+{
+	width: 100%;
+}
+nav
+{
+	float: left;
+	width: 152px;
+}
+
+nav a
+{
+	display: block;
+	color: white;
+	background-color: #C0C0C0;
+	padding: 10px;
+	border:2px solid black;
+	border-radius:12px;	
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+nav ul li
+{
+	list-style: none;
+	text-align: center;
+	padding: 1px;
+}
+nav li :hover
+{
+	background-color: white;
+	color: #000000;
+}
+
+
+#pics
+{
+	float: right;
+	width: 190px;
+	padding: 0px;
+}
+IMG{
+	width: 100%;
+}
+#mainContent
+{
+	margin-left: 152px;
+	margin-right: 210px;
+	padding: 2px 10px 10px 10px;
+	
+}
+
+footer
+{
+	
+	clear: both;
+	border: 2px solid black;
+	border-radius: 15px 15px 0 0 ;
+	text-align: center;	
+	background-color: grey;
+}
+/**  end of Index.html design **/
+table,form
+{
+    color:#000000;
+    font:14px Georgia, serif;
+    padding:0px;
+	border-collapse:collapse;
+	border: 2px solid black;
+	width: 100%;
+	float:right;
+}
+ 
+th
+{
+    color:#000000;
+    font-weight:bold;
+    padding:0px;
+    text-align:center;
+    vertical-align:top;
+}
+ 
+tr
+{
+    font-weight:normal;
+}
+ 
+td
+{
+    padding:0px;
+    text-align:left;
+    vertical-align:top;
+}
+label{
+	display: block;
+}
+
+/** end of TABLE design ContactUs **/
