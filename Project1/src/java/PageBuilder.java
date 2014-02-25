@@ -29,6 +29,10 @@ public class PageBuilder {
         PAGE_TEMP_LOC=pageTemplateLocation;
     }
 
+    
+    public String build(){
+        return null;
+    }
     /*
     *finds content strings for this page and inserts them
     *in order into the content ArrayList
@@ -50,6 +54,6 @@ public class PageBuilder {
 
     private void getTemplateContent(){
         Path path = FileSystems.getDefault().getPath("logs", "access.log");
-        Files.readAllLines(path,//NEED TO ADD A CHARSET OBJECT);
+        //Files.readAllLines(path,//NEED TO ADD A CHARSET OBJECT);
     }
 }

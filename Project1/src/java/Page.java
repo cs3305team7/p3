@@ -17,13 +17,17 @@ public class Page {
     
     private String website,page;
     private PageBuilder builder;
-
+    private String pageContent;
     public Page(String website, String page){
         this.website=website;
         this.page=page;
         builder= new PageBuilder(getTemplate());
     }
-
+    
+    public String createPage(){
+        pageContent=builder.build();
+    }
+    
     //////TODO
     /*
     *  method to return the page html template as a string
