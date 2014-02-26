@@ -8,7 +8,7 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+import java.util.HashMap;
 /**
  *
  * @author Thomas Carr
@@ -18,16 +18,26 @@ public class Page {
     private String website,page;
     private PageBuilder builder;
     private String pageContent;
+    private HashMap<String,String> ContentMap;
+    private String styleTemplate;
     public Page(String website, String page){
         this.website=website;
         this.page=page;
         builder= new PageBuilder(getTemplate());
+        ContentMap = createPage();
+        
     }
     
-    public String createPage(){
-        pageContent=builder.build();
+    private HashMap<String,String> createPage(){
+       return builder.build();
     }
-    
+    public String Get(String contentID){
+        return ContentMap.get(contentID);
+    }
+    public String getStyles(){
+        
+        return ContentMap.get("Styles");
+    }
     //////TODO
     /*
     *  method to return the page html template as a string

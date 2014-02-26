@@ -1,18 +1,21 @@
 <%-- 
-    Document   : index
-    Created on : 18-Feb-2014, 11:47:28
-    Author     : as11
+    Document   : template
+    Created on : 25-Feb-2014, 20:34:22
+    Author     : Thomas
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    
     <% 
         Page p = new Page("","");
        // out.print(p.createPage());
     %>
-	<head>
-	<link rel="stylesheet" href="../../stylesheets/stylesheetOne.css" />
-        <title>CMS</title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>CMS TEMPLATE1</title>
+        <link rel="stylesheet" href=<%out.print(p.getStyles());%> <!--href="../../stylesheets/stylesheetOne.css"--> />
 	</head>
 	<body>
                 
@@ -89,4 +92,5 @@
 		</footer>
 	</body>
 </html>
+
 

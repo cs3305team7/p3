@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
 
 /**
  *
@@ -18,19 +19,32 @@ import java.nio.file.Path;
  */
 public class PageBuilder {
     protected ArrayList<String> content;
-    private final String CONTENTQUERY;
+    private final String CONTENTQUERY,HEADERQUERY,FOOTERQUERY;
     private final String PAGE_TEMP_LOC;
-
+    private HashMap<String,String> ContentMap;
 
     public PageBuilder(String pageTemplateLocation){
         content=new ArrayList<>();
-        CONTENTQUERY="";//sql query using website and page
+        CONTENTQUERY="";//sql query using website and page to get footer
+        HEADERQUERY="";//sql query using website and page to get header
+        FOOTERQUERY="";
         setUpContentList();
         PAGE_TEMP_LOC=pageTemplateLocation;
+        ContentMap=new HashMap<String,String>();
     }
 
-    
-    public String build(){
+    /**
+     * create a map of all sections and the content they are linked to
+     * @return returns a map of sections and their content for insertion into 
+     * html 
+     */
+    public HashMap<String,String> build(){
+        ContentMap.put("HEADER", getHeader());
+        //add code to put each section id + it's content
+        //into the map
+        
+        //get editable sectiosn strings from page class/from template
+        ContentMap.put("FOOTER",getFooter());
         return null;
     }
     /*
@@ -51,7 +65,30 @@ public class PageBuilder {
             //process result adding content to content arraylist
         }
     }
-
+    
+    private String getHeader(){
+        DBManager db=new DBManager();
+        ResultSet rs=null;
+        try{
+            rs=db.query(HEADERQUERY);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    private String getFooter(){
+        DBManager db=new DBManager();
+        ResultSet rs=null;
+        try{
+            rs=db.query(FOOTERQUERY);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
     private void getTemplateContent(){
         Path path = FileSystems.getDefault().getPath("logs", "access.log");
         //Files.readAllLines(path,//NEED TO ADD A CHARSET OBJECT);
