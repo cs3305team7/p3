@@ -33,6 +33,8 @@ center{
     width: 30%;
 }
 footer {
+    clear: left;
+    clear: right;
     margin-left: 20%;
     width: 80%;
     background-color: #6f6f6f;
