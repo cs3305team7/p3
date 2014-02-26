@@ -14,14 +14,29 @@ body{
  background-image:url('images/background.jpg');
 }
 #wrapper{
+    width: 80%;
     margin-top: 80px;
-   
 }
 center{
-    margin-left: auto;
+    margin-left: 20%;
     margin-right: auto;
     background-color: #C0C0C0;
-    width: 50%;
+}
+#leftColumn  {
+    background: #C8FC98;
+    float: left;
+    width: 20%;
+}
+#rightColumn  {
+    background: #C8FC98;
+    float: right;
+    width: 30%;
+}
+footer {
+    margin-left: 20%;
+    width: 80%;
+    background-color: #6f6f6f;
+    text-align: center;
 }
 input {
     border: 1px solid white; 
@@ -128,18 +143,6 @@ border-left-style:solid;
     box-shadow: none;
     top: 3px;
     left: 3px;
-}
-#login{
-    float:left;
-    
-    margin-left: 100px;
-    border: 2px dotted black;
-}
-#register{
-    border: 2px dotted black;
-    width: 35%;
-    margin-left: 260px;
-    
 }
 h1,h2{
     color: #330000;

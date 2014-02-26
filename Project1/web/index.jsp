@@ -15,13 +15,21 @@
     <body>
         <div id="wrapper">
          <center>
-             <h1>Charity Management Website!</h1> 
-             <!--<a href="login.jsp">Already a member: login here!</a>
-              <a href="register.jsp">Not a member! Register here!</a>-->
-             <form name="login" method="post" action="RegServlet" id="login">
+             <h1>Charity Management Website!</h1>
+             <section id="leftColumn">
+                 <h3>Contact Us</h3>
+                 <p>We are located in Cork</p>
+                 <p>We are located in Cork</p>
+                 <p>We are located in Cork</p>
+                 <p>We are located in Cork</p>
+             </section>
+             <section id="rightColumn">
+                <h3>Twitter Feed</h3>
+                <p>We are located in Cork</p> 
+                <form name="login" method="post" action="RegServlet" id="login">
                  <h2>Login here!</h2>
                 <input type="hidden" name="pagename" value="login"/>
-                <table>
+                    <table>
                         <tr>
                                 <td>Email</td>
                                 <td><input type="text" name="txtEmail"/></td>
@@ -33,8 +41,8 @@
                         <tr>
                                 <td><button type="submit">Login</button></td>
                         </tr>
-                </table>
-             </form>
+                    </table>
+                </form>
              
             <form name="registration" action="RegServlet" method="post" id="register">
                   <h2>Register here!</h2>
@@ -57,11 +65,33 @@
                             <td><input type="password" name="txtPassword"/></td>
                     </tr>
                     <tr>
-                            <td><button type="submit">Submit</button></td>
+                            <td><button type="submit">Register</button></td>
                     </tr>
                 </table>
              </form>
+             </section>
+                 
+             <nav>
+                <ul>
+                <li>
+                <a id=\"current\" href=\"index.php\">Home</a>
+                </li>
+                <li>
+                <a href=\"about.php\">About</a>
+                </li>
+                <li>
+                <a href=\"news.php\">Add Page</a>
+                </li>
+                <li>
+                <a href=\"#\">Link</a>
+                </li>
+                </ul>
+            </nav>
+             <!--<a href="login.jsp">Already a member: login here!</a>
+              <a href="register.jsp">Not a member! Register here!</a>-->
+             <p>Welcome to our website!</p>
            </center>
+           <footer>&copy Team 7.</footer>
         </div><!--closing wrapper div-->
     </body>
 </html>
