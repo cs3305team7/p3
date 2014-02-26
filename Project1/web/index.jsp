@@ -88,10 +88,11 @@
                 </table>
              </form>
              </section>
+             <div id="main">
              <!--<a href="login.jsp">Already a member: login here!</a>
               <a href="register.jsp">Not a member! Register here!</a>-->
              <p>Welcome to our website!</p>
-           </center>
+             </div>
            <footer>&copy Team 7.</footer>
         </div><!--closing wrapper div-->
     </body>

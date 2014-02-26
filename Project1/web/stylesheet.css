@@ -5,7 +5,7 @@
     Description:
         Purpose of the stylesheet follows.
 */
-
+/*For screens 320px+ */
 root { 
     display: block;
 }
@@ -14,10 +14,12 @@ body{
  background-image:url('images/background.jpg');
 }
 #wrapper{
-    width: 60%;
-    margin-left: 20%;
+    width: 100%;
     margin-top: 80px;
     background-color: #C0C0C0;
+    border: 2px solid #6D6968;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 header{
 
@@ -25,8 +27,8 @@ header{
     background-color: #C0C0C0;
     text-align: center;
 }
-center{
-
+#main{
+    width: 100%;
     margin-right: auto;
     background-color: #C0C0C0;
 }
@@ -34,12 +36,12 @@ center{
     clear: left;
     background: #C8FC98;
     float: left;
-    width: 20%;
+    width: 100%;
 }
 #rightColumn  {
-    background: #C8FC98;
+    background: #ff0000;
     float: right;
-    width: 30%;
+    width: 100%;
 }
 footer {
     clear: left;
@@ -66,8 +68,6 @@ input {
 label{
     color: black;
     display: block;
-
-
 }
 input{
     display:block;
@@ -155,4 +155,55 @@ border-left-style:solid;
 }
 h1,h2{
     color: #330000;
+}
+/*For screens 480px+ */
+@media screen and (min-width: 480px)
+{
+    #wrapper{
+       background-color: #f6fbac; 
+    }
+
+
+}
+/*For screens 720px+ */
+@media screen and (min-width: 720px)
+{
+
+    #wrapper
+    {
+        width: 80%;
+        margin-left: 10%;
+        background-color: #626444; 
+    }
+    #main{
+        clear: left;
+        clear: right;
+    }
+    #leftColumn{
+        width: 50%;
+    }
+    #rightColumn{
+        width: 50%;
+    }
+    figure img
+    {
+        width: natural;
+    }
+}
+/*For screens 1024px+ */
+@media screen and (min-width: 1024px)
+{
+
+    #wrapper{
+        background-color: #ffffff; /*white*/
+    }
+    #main{
+        clear: none;
+    }
+    #leftColumn{
+        width: 20%;
+    }
+    #rightColumn{
+        width: 30%;
+    }
 }
