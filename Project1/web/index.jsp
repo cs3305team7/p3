@@ -14,8 +14,26 @@
     </head>
     <body>
         <div id="wrapper">
+            <header>
+                <h1>Charity Management Website!</h1>
+                <nav>
+                    <ul>
+                    <li>
+                    <a id=\"current\" href=\"index.php\">Home</a>
+                    </li>
+                    <li>
+                    <a href=\"about.php\">About</a>
+                    </li>
+                    <li>
+                    <a href=\"news.php\">Add Page</a>
+                    </li>
+                    <li>
+                    <a href=\"#\">Link</a>
+                    </li>
+                    </ul>
+                </nav>
+            </header>
          <center>
-             <h1>Charity Management Website!</h1>
              <section id="leftColumn">
                  <h3>Contact Us</h3>
                  <p>We are located in Cork</p>
@@ -70,23 +88,6 @@
                 </table>
              </form>
              </section>
-                 
-             <nav>
-                <ul>
-                <li>
-                <a id=\"current\" href=\"index.php\">Home</a>
-                </li>
-                <li>
-                <a href=\"about.php\">About</a>
-                </li>
-                <li>
-                <a href=\"news.php\">Add Page</a>
-                </li>
-                <li>
-                <a href=\"#\">Link</a>
-                </li>
-                </ul>
-            </nav>
              <!--<a href="login.jsp">Already a member: login here!</a>
               <a href="register.jsp">Not a member! Register here!</a>-->
              <p>Welcome to our website!</p>
