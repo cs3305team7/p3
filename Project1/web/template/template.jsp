@@ -21,15 +21,15 @@
                 
 	  <div id="wrapper">
 	   <div id="edit2" contenteditable="true">
-		<header id="headerContent">
-				<h1>Enter Title of you Website</h1>
+		<header id="HEADER">
+				<h1 >Enter Title of you Website</h1>
 				<h2> 
 					Enter a Quote if you wish!
 				</h2>
 		</header>
 		</div> <!--end of header div-->
 		
-		<nav>
+		<nav id="EDITABLENAV">
 		<ul>
 			<li><a href="index.jsp">HOME</a></li>
 			<li><a href="aboutUs.jsp">ABOUT US</a></li>
@@ -83,7 +83,7 @@
 		</div>
 		</div> <!--end of wrapper-->
 		
-		<footer>
+                <footer id="FOOTER">
 			<p>
 				<small>
 					&copyright; Team04 UCC.
