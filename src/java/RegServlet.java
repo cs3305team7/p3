@@ -106,7 +106,8 @@ public class RegServlet extends HttpServlet {
             DBManager dbman = new DBManager();
             try{
               ResultSet rs =  dbman.query("select * from "
-                      + "registered_users where username='"+UserName+"'");
+                      + "registered_users where username='"+UserName+"'"+
+                      "and email = "+"'"+email+"'");
               ResultSet rs2=dbman.query("select * "
                       + "from charity_sites where url="+"'"+charityName+"'");
                       if(!rs.first() && !rs2.first()){
@@ -256,29 +257,39 @@ public class RegServlet extends HttpServlet {
                 }
     
             else if (hidden_parameter.equals("login")) {
-                //String email = request.getParameter("txtEmail");
-                //String password = request.getParameter("txtPassword");
-                if ((email.equals("admin")) && (password.equals("admin"))){
-                    response.sendRedirect("admin.jsp");
-                }else{
-                    User sets = new User();
-                    sets.setEmail(email);
-                    sets.setPassword(password);
-
-
-                       try {
-                            int checkUser = manager.checkUser(sets);
-                            if(checkUser == 1){
-                                response.sendRedirect("themes/theme1/index.jsp");
-                            } else{
-                                response.sendRedirect("login.jsp");
+                String myemail = request.getParameter("txtEmail");
+                String mypassword = request.getParameter("txtPassword");
+                DBManager dbman = new DBManager();
+                User user;
+                try{
+                     ResultSet rs = dbman.query("SELECT * FROM user WHERE "+
+                             "email = "+"'"+myemail+"'");
+                     if(!rs.first() || !rs.isLast()){
+                          session.setAttribute("Error",
+                        XMLParser.ErrorRetriever.Error.DATABASE_CONNECTION);
+                        response.sendRedirect("login.jsp");
+                     } 
+                     else{
+                         if(rs.getString("passord").equals(mypassword)){
+                            ResultSet rs1 = dbman.query("SELECT url FROM"+
+                                    " chairty_sites WHERE w_ID = "+"'"+
+                                    rs.getString("w_ID")+"'");
+                            if(rs1.first() && rs1.isLast()){
+                                user=new User(rs.getString("username"),
+                                rs.getString("firstname"),rs.getString("lastname"),
+                                rs.getString("email"),rs.getString("password"),
+                                        rs1.getString("url"));
+                                session.setAttribute("USER", user);
+                                response.sendRedirect("dashboard.jsp");//tony is working on thsi file name might be different
                             }
-                     } catch (SQLException ex) {
-                            // Logger.getLogger(RegServlet.class.getName())
-                         //.log(Level.SEVERE, null, ex);
-                           ex.printStackTrace();
-                    }
+                         }
+                     }
+                }catch(SQLException e){
+                    session.setAttribute("Error",
+                        XMLParser.ErrorRetriever.Error.DATABASE_CONNECTION);
+                response.sendRedirect("register.jsp");
                 }
+               
       
         } //end of log in if statement
     }//end of doPost
