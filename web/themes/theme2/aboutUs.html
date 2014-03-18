@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" href="stylesheet.css" />
+        <title>CMS</title>
+		<script type="text/javascript">
+			function saveEdits() {
+				//get the editable element
+				var editElem3 = document.getElementById("edit3");
+				var editElem4 = document.getElementById("edit4");
+
+				//get the edited element content
+				var userVersion3 = editElem3.innerHTML;
+				var userVersion4 = editElem4.innerHTML;
+
+				//save the content to local storage
+				localStorage.userEdits3 = userVersion3;
+				localStorage.userEdits4 = userVersion4;
+
+				//write a confirmation to the user
+				document.getElementById("update").innerHTML="Edits saved!";
+			}
+			
+			function checkEdits() {
+				//find out if the user has previously saved edits
+				if(localStorage.userEdits3!=null)
+				document.getElementById("edit3").innerHTML = localStorage.userEdits3;
+				
+				if(localStorage.userEdits4!=null)
+				document.getElementById("edit4").innerHTML=localStorage.userEdits4;
+			}
+			
+			function clearLocal() {
+			  clear: localStorage.clear(); 
+			  return false;
+			}
+		</script>
+    </head>
+
+
+<body onload="checkEdits()">
+<div id="wrapper">
+	<div id="edit4" contenteditable="true">
+		<header id="headerContent">
+				<h1>Charity Management System</h1>
+				<h2> 
+					&#34;The greatness of a nation and its moral progress can be judged by the way its animals are treated.&#34;
+					</br><small>By: Mahatma Gandhi </small>
+				</h2>
+		</header>
+	</div> <!--end of header div-->
+		<nav>
+		<ul>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="aboutUs.html">ABOUT US</a></li>
+			<li><a href="contactUs.html">CONTACT US</a></li>
+		</ul>
+		</nav>
+		
+		<aside id="pics">
+			<img src="1.jpg" alt="Charity Case" title=""  />
+			<img src="2.jpg" alt="Charity Case" title="" />
+			<img src="3.jpg" alt="Charity Case" title="" />
+			<img src="4.jpg" alt="Charity Case" title="" />
+			<img src="5.jpg" alt="Charity Case" title="" />
+		</aside>
+		
+		
+		<div id="edit3" contenteditable="true">
+			<h1> Information About Charity Management System</h1>
+			<p> 	Welcome to Charity Management System. This system was designed to help users create webpages.
+					You can build your website in minutes using our functionalities. Our professionally designed website templates allow you to personalize your website by choosing templates, changing certain content on the
+					webpages as to what you prefer.
+			</p>
+		  <h2>Enter Heading2 </h2>
+		 <p> 	User does not need to have coding skills, no need to be a computer expert. Everything is clicks away!
+			So finally with this you can choose a design, insert your content and publish it to the world. Voila! Thats how easy it is to make a webpage with us! 
+		</p>
+			<ul>
+					<h2> Advantages </h2>
+					<li>Easy to use</li>
+					<li>Easy to maintain</li>
+					<li>Quick and Easy Website in minutes</li>
+					<li>User Friendly</li>
+					<li>Easily Accessable</li>
+					<li>No coding required</li>
+					<li>No need to be a computer expert</li>
+				</ul>
+		</div>
+		<p> Functionalities for Editable Text </p>
+		<button  onclick="document.execCommand('bold',false,null);">Bold</button>
+		<button  onclick="document.execCommand('italic',false,null);">Italic</button>
+		<input type="button" value="save my edits" onclick="saveEdits()"/>
+		
+		<button><a href='' onclick='javascript:clearLocal();'>Clear local storage</a></button>
+		<div id="update"> </div>
+	
+    <footer>
+        <p>
+            <small>
+                &copy; Team04 UCC. All rights reserved.
+            </small>
+        </p>
+    </footer>
+</div>
+</body>
+</html> 

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" href="stylesheet.css" />
+        <title>CMS</title>
+		<script type="text/javascript">
+			function saveEdits() {
+				//get the editable element
+				var editElem = document.getElementById("edit");
+				var editElem2 = document.getElementById("edit2");
+
+				//get the edited element content
+				var userVersion = editElem.innerHTML;
+				var userVersion2 = editElem2.innerHTML;
+
+				//save the content to local storage
+				localStorage.userEdits = userVersion;
+				localStorage.userEdits2 = userVersion2;
+
+				//write a confirmation to the user
+				document.getElementById("update").innerHTML="Edits saved!";
+			}
+			
+			function checkEdits() {
+				//find out if the user has previously saved edits
+				if(localStorage.userEdits!=null)
+				document.getElementById("edit").innerHTML = localStorage.userEdits;
+				
+				if(localStorage.userEdits2!=null)
+				document.getElementById("edit2").innerHTML=localStorage.userEdits2;
+			}
+			
+			function clearLocal() {
+			  clear: localStorage.clear(); 
+			  return false;
+			}
+		</script>
+	</head>
+	<body onload="checkEdits()">
+	  <div id="wrapper">
+	   <div id="edit2" contenteditable="true">
+		<header id="headerContent">
+				<h1>Charity Management System</h1>
+				<h2> 
+					&#34;The greatness of a nation and its moral progress can be judged by the way its animals are treated.&#34;
+					</br><small>By: Mahatma Gandhi </small>
+				</h2>
+		</header>
+		</div> <!--end of header div-->
+		<nav>
+		<ul>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="aboutUs.html">ABOUT US</a></li>
+			<li><a href="contactUs.html">CONTACT US</a></li>
+		</ul>
+		</nav>
+		
+		<aside id="pics">
+			<img src="1.jpg" alt="Charity Case" title=""  />
+			<img src="2.jpg" alt="Charity Case" title="" />
+			<img src="3.jpg" alt="Charity Case" title="" />
+			<img src="4.jpg" alt="Charity Case" title="" />
+			<img src="5.jpg" alt="Charity Case" title=""/>
+		</aside>
+		
+		
+		<div id="edit" contenteditable="true">
+			<h1> Enter Heading </h1>
+		 <p> 	The combination of Red, Green and Blue values from 0 to 255 gives a total of more than 16 million different colors to play with (256 x 256 x 256).
+
+						Most modern monitors are capable of displaying at least 16384 different colors.
+
+						If you look at the color table below, you will see the result of varying the red light from 0 to 255, while keeping the green and blue light at zero.
+
+						To see a full list of color mixes when the red light varies from 0 to 255, click on one of the hex or rgb values below.
+						
+						Most modern monitors are capable of displaying at least 16384 different colors.
+
+						If you look at the color table below, you will see the result of varying the red light from 0 to 255, while keeping the green and blue light at zero.
+
+						To see a full list of color mixes when the red light varies from 0 to 255, click on one of the hex or rgb values below.
+		</p>
+		  <h2>Enter Heading2 </h2>
+		 <p> 	The combination of Red, Green and Blue values from 0 to 255 gives a total of more than 16 million different colors to play with (256 x 256 x 256).
+
+						Most modern monitors are capable of displaying at least 16384 different colors.
+
+						If you look at the color table below, you will see the result of varying the red light from 0 to 255, while keeping the green and blue light at zero.
+
+						To see a full list of color mixes when the red light varies from 0 to 255, click on one of the hex or rgb values below.
+						
+						Most modern monitors are capable of displaying at least 16384 different colors.
+
+						If you look at the color table below, you will see the result of varying the red light from 0 to 255, while keeping the green and blue light at zero.
+
+						To see a full list of color mixes when the red light varies from 0 to 255, click on one of the hex or rgb values below.
+						
+						Most modern monitors are capable of displaying at least 16384 different colors.
+
+						If you look at the color table below, you will see the result of varying the red light from 0 to 255, while keeping the green and blue light at zero.
+
+						To see a full list of color mixes when the red light varies from 0 to 255, click on one of the hex or rgb values below.
+		</p>
+		</div>
+		<p> Functionalities for Editable Text </p>
+		<button  onclick="document.execCommand('bold',false,null);">Bold</button>
+		<button  onclick="document.execCommand('italic',false,null);">Italic</button>
+		<input type="button" value="save my edits" onclick="saveEdits()"/>
+		
+		<button><a href='' onclick='javascript:clearLocal();'>Clear local storage</a></button>
+		<div id="update"> </div>
+		</div> <!--end of wrapper-->
+		
+		<footer>
+			<p>
+				<small>
+					&copy; Team04 UCC. All rights reserved.
+				</small>
+			</p>
+		</footer>
+	</body>
+</html>
+

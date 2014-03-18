@@ -1,0 +1,130 @@
+/* 
+    Document   : stylesheetOne
+    Created on : 18-Feb-2014, 19:16:52
+    Author     : as11
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body
+{
+	background-image: url(../images/themeOne/bkground.jpg);
+}
+#wrapper
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	background-color: #FFF0F5;
+	border-radius: 12px; 
+	padding: 12px;
+}
+
+header
+{
+	text-align: center;	
+	background-color: white;
+	padding: 1px;
+	border-radius: 12px 12px 0 0; 
+	
+}	
+
+nav
+{
+	float: left;
+	width: 150px;
+}
+
+nav ul
+{
+	padding: 0 10px 0 0;
+}
+
+nav a
+{
+	display: block;
+	color: black;
+	background-color: #FAEBD7;
+	padding: 5px;
+	border:1px solid white;
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+nav ul li
+{
+	list-style: none;
+	text-align: center;
+	padding: 1px;
+}
+nav li :hover
+{
+	background-color: white;
+	color: brown;
+}
+
+img
+{
+	width: 100%;
+    height: auto;
+}
+
+#pics
+{
+	float: right;
+	width: 190px;
+	padding: 10px;
+}
+
+#main
+{
+	margin-left: 160px;
+	margin-right: 200px;
+	padding: 10px 10px 10px 10px;
+}
+
+footer
+{
+	
+	clear: both;
+	text-align: center;	
+}
+/**  TABLE design ContactUs **/
+table,form
+{
+    color:#000000;
+    font:14px Georgia, serif;
+    padding:0px;
+	border-collapse:collapse;
+	border: 2px solid black;
+	width: 80%;
+	float:right;
+}
+ 
+th
+{
+    color:#000000;
+    font-weight:bold;
+    padding:0px;
+    text-align:center;
+    vertical-align:top;
+}
+ 
+tr
+{
+    font-weight:normal;
+}
+ 
+td
+{
+    padding:0px;
+    text-align:left;
+    vertical-align:top;
+}
+label{
+	display: block;
+}
+
+/** end of TABLE design ContactUs **/

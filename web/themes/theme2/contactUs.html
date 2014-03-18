@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" href="stylesheet.css" />
+        <title>CMS</title>
+		<script type="text/javascript">
+			function saveEdits() {
+				//get the editable element
+				var editElem5 = document.getElementById("edit5");
+				var editElem6 = document.getElementById("edit6");
+				var editElem7 = document.getElementById("edit7");
+				var editElem8 = document.getElementById("edit8");
+
+				//get the edited element content
+				var userVersion5 = editElem5.innerHTML;
+				var userVersion6 = editElem6.innerHTML;
+				var userVersion7 = editElem7.innerHTML;
+				var userVersion8 = editElem8.innerHTML;
+
+				//save the content to local storage
+				localStorage.userEdits5 = userVersion5;
+				localStorage.userEdits6 = userVersion6;
+				localStorage.userEdits7 = userVersion7;
+				localStorage.userEdits8 = userVersion8;
+
+				//write a confirmation to the user
+				document.getElementById("update").innerHTML="Edits saved!";
+			}
+			
+			function checkEdits() {
+				//find out if the user has previously saved edits
+				if(localStorage.userEdit5!=null)
+				document.getElementById("edit5").innerHTML = localStorage.userEdits5;
+				
+				if(localStorage.userEdits6!=null)
+				document.getElementById("edit6").innerHTML=localStorage.userEdits6;
+				
+				if(localStorage.userEdits7!=null)
+				document.getElementById("edit7").innerHTML=localStorage.userEdits7;
+				
+				if(localStorage.userEdits8!=null)
+				document.getElementById("edit8").innerHTML=localStorage.userEdits8;
+			}
+			
+			function clearLocal() {
+			  clear: localStorage.clear(); 
+			  return false;
+			}
+		</script>
+    </head>
+
+
+<body onload="checkEdits()">
+<div id="wrapper">
+	<header>
+     <div id="edit5" contenteditable="true">
+		<header id="headerContent">
+				<h1>Charity Management System</h1>
+				<h2> 
+					&#34;The greatness of a nation and its moral progress can be judged by the way its animals are treated.&#34;
+					</br><small>By: Mahatma Gandhi </small>
+				</h2>
+		</header>
+	</div> <!--end of header div-->
+    </header>
+
+	<nav>
+	<ul>
+		<li><a href="index.html">HOME</a></li>
+		<li><a href="aboutUs.html">ABOUT US</a></li>
+		<li><a href="contactUs.html">CONTACT US</a></li>
+	</ul>
+	</nav>	
+	
+	<section id="mainContent">
+						
+			<article>
+				<h1>Contact Us: CMS Service Provider</h1>
+				Contact details for Admin: 
+				<table>
+					<tr>
+						<td><b> Name </b></td>
+						<td id="edit7" contenteditable="true"> Enter Name </td>
+					</tr>
+					<tr>
+						<td><b> Telephone </b></td>
+					 
+						<td id="edit6" contenteditable="true"> Enter Telephone </td>
+					
+					</tr>
+					<tr>
+						<td><b> Contact Email </b></td>
+					 
+						<td id="edit8" contenteditable="true"> Enter Email Address </td>
+					
+					</tr>
+				</table>
+				</br>
+		
+
+		
+		<table>
+			<tr>
+			<td>
+				<form name="form1" method="post" action="sendEmail.php">
+					<table>
+					<tr>
+						<td>Subject: </td>
+						<td>
+							<input name="subject" type="text" id="subject" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td>Detail: </td>
+						<td>
+							<textarea name="detail" cols="24" rows="6" id="detail"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>Name: </td>
+						<td>
+							<input name="name" type="text" id="name" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td>Email From: </td>
+						<td>
+							<input name="customer_mail" type="text" id="customer_mail" size="30">
+						</td>
+					</tr>
+						<tr>
+						<td>Email To:</td>
+						<td>
+							<input name="receiver_mail" type="text" id="receiver_main" size="30">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" name="Submit" value="Submit">
+							<input type="reset" name="Submit2" value="Reset">
+						</td>
+					</tr>
+					</table>
+				</form>
+			</td>
+			</tr>
+		</table>
+			</article>
+	
+	</section>	
+
+     
+    <footer>
+        <p>
+            <small>
+                &copy; Team04 UCC. All rights reserved.
+            </small>
+        </p>
+    </footer>
+		<p> Functionalities for Editable Text </p>
+		<button  onclick="document.execCommand('bold',false,null);">Bold</button>
+		<button  onclick="document.execCommand('italic',false,null);">Italic</button>
+		<input type="button" value="save my edits" onclick="saveEdits()"/>
+		
+		<button><a href='' onclick='javascript:clearLocal();'>Clear local storage</a></button>
+		<div id="update"> </div>
+	</div>
+</body>
+</html> 

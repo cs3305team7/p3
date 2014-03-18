@@ -1,0 +1,209 @@
+/* 
+    Document   : stylesheet
+    Created on : 18-Feb-2014, 18:30:53
+    Author     : as11
+    Description:
+        Purpose of the stylesheet follows.
+*/
+/*For screens 320px+ */
+root { 
+    display: block;
+}
+body{ 
+ /**background-color: #330000;*/
+ background-image:url('images/background.jpg');
+}
+#wrapper{
+    width: 100%;
+    margin-top: 80px;
+    background-color: #C0C0C0;
+    border: 2px solid #6D6968;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+header{
+
+    margin-right: auto;
+    background-color: #C0C0C0;
+    text-align: center;
+}
+#main{
+    width: 100%;
+    margin-right: auto;
+    background-color: #C0C0C0;
+}
+#leftColumn  {
+    clear: left;
+    background: #C8FC98;
+    float: left;
+    width: 100%;
+}
+#rightColumn  {
+    background: #ff0000;
+    float: right;
+    width: 100%;
+}
+footer {
+    clear: left;
+    clear: right;
+    background-color: #6f6f6f;
+    text-align: center;
+}
+input {
+    border: 1px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 5px;
+    background: rgba(255,255,255,0.5);
+    
+}
+
+label{
+    color: black;
+    display: block;
+}
+input{
+    display:block;
+}
+h1 {
+     color: black;
+     text-shadow: 2px 2px 0px #2c2e38, 5px 5px 0px #5c5f72;
+     font: 50px 'BazarMedium';
+     letter-spacing: 10px;
+}
+h2{
+    color: black;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+a:link {
+    color:#0000FF;
+}      /* unvisited link */
+a:visited {
+    color:#0000FF;
+}  /* visited link */
+a:hover {
+    background-color:#990033;
+    color: white;
+}  /* mouse over link */
+a:active {
+    color:#0000FF;
+}  /* selected link */
+p{
+    color: black;
+}
+ ul {
+ margin-left: 0;
+ padding-left: 0;
+ display: inline;
+ } 
+ ul li {
+ margin-left: 0;
+ margin-bottom: 0;
+ padding: 2px 15px 5px;
+ border: 1px solid #000;
+ list-style: none;
+ display: inline;
+ }
+ 
+  
+ ul li.list {
+ border-bottom: 1px solid #ffc;
+ list-style: none;
+ display: inline;
+border-top-style:dotted;
+border-right-style:solid;
+border-bottom-style:dotted;
+border-left-style:solid;
+ }
+ 
+#adminLogin {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    background: #08C;
+    /* Font styles */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+ 
+#adminLogin:hover {
+    background: #0AF
+}
+#adminLogin.three-d {
+    position: relative;
+    box-shadow: 
+        1px 1px #53A7EA, 
+        2px 2px #53A7EA, 
+        3px 3px #53A7EA;
+    transition: all 0.1s ease-in;
+}
+ 
+#adminLogin:active {
+    box-shadow: none;
+    top: 3px;
+    left: 3px;
+}
+h1,h2{
+    color: #330000;
+}
+/*For screens 480px+ */
+@media screen and (min-width: 480px)
+{
+    #wrapper{
+       background-color: #f6fbac; 
+    }
+
+
+}
+/*For screens 720px+ */
+@media screen and (min-width: 720px)
+{
+
+    #wrapper
+    {
+        width: 80%;
+        margin-left: 10%;
+        background-color: #626444; 
+    }
+    #main{
+        clear: left;
+        clear: right;
+    }
+    #leftColumn{
+        width: 50%;
+    }
+    #rightColumn{
+        width: 50%;
+    }
+    figure img
+    {
+        width: natural;
+    }
+}
+/*For screens 1024px+ */
+@media screen and (min-width: 1024px)
+{
+
+    #wrapper{
+        background-color: #ffffff; /*white*/
+    }
+    #main{
+        clear: none;
+    }
+    #leftColumn{
+        width: 20%;
+    }
+    #rightColumn{
+        width: 30%;
+    }
+}

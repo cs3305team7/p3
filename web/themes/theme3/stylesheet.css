@@ -1,0 +1,133 @@
+/**  start of index.html design**/
+body
+{
+	
+	background-image:url('bg.jpg');
+}
+#wrapper
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 760px;
+	background-color: 	#65909A;
+}
+
+header
+{
+	border: 25px dotted #65909A;	
+	text-align: center;	
+	background-color: white;
+	color: #6699FF;
+}	
+h1,h2{
+	font-family:"Courier New", Courier, monospace;
+}
+
+header img
+{
+	width: 100%;
+}
+nav
+{
+	margin-left:auto;
+	margin-right:auto;
+	width: 60%;
+	padding-left: 20px;
+	font-size: 25px;
+	font-family:"Courier New", Courier, monospace;
+	
+}
+a{
+	text-decoration: none;
+}
+#local{
+	color:black;
+}
+nav li,a
+{
+	display: inline;
+	color: #6699FF;
+	background-color: white;
+	border-radius:12px;	
+	text-decoration: none;
+	
+}
+
+nav ul li
+{
+	list-style: none;
+	text-align: center;
+	padding: 1px;
+}
+nav li :hover
+{
+	background-color: grey;
+	color: #000000;
+}
+
+
+#pics
+{
+	margin-left:auto;
+	margin-right:auto;
+	width: 90%;
+	padding: 0px;
+	width:300;
+	height:375
+}
+IMG{
+	width: 100%;
+}
+#mainContent
+{
+	margin-left: 152px;
+	margin-right: 210px;
+	padding: 2px 10px 10px 10px;
+	
+}
+
+footer
+{
+	
+	clear: both;
+	border-radius: 15px 15px 0 0 ;
+	text-align: center;	
+	background-color: white;
+	color: #6699FF;
+}
+/**  end of Index.html design **/
+/**  TABLE design ContactUs **/
+table,form
+{
+    color:#000000;
+    font:14px Georgia, serif;
+    padding:0px;
+	border-collapse:collapse;
+	border: 2px solid black;
+	width: 100%;
+}
+ 
+th
+{
+    color:#000000;
+    font-weight:bold;
+    padding:0px;
+    text-align:center;
+    vertical-align:top;
+}
+ 
+tr
+{
+    font-weight:normal;
+}
+ 
+td
+{
+    padding:0px;
+    text-align:left;
+    vertical-align:top;
+}
+label{
+	display: block;
+}
+/** end of TABLE design ContactUs **/
