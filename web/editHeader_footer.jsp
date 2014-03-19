@@ -30,12 +30,12 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheetTem.css" id="stylesheet">
 		<!--href="../../stylesheets/stylesheetOne.css"--> 
 		<script type="text/javascript">
-<<<<<<< HEAD
+
 		function submitForm() {
                     $.ajax({type:'POST', url: 'processForm.jsp', data:$('#form2').serialize(), success: function(response) {
                         $('#form2').find('.form_result').html(response);
                     }});
-=======
+
 		$(document).ready(function() {
 		   $('#textarea2').click(function() {
 				  $.ajax({ 
