@@ -41,7 +41,7 @@
 		   $('#textarea2').click(function() {
 				  $.ajax({ 
 					  type: "POST", 
-					  url: "process.jsp",//get response from this file
+					  url: "processForm.jsp",//get response from this file
 					  success: function(response){ 
 					   $("textarea#text2").val(response);//send response to textarea
 					}
@@ -54,14 +54,14 @@
 		   $('#textarea4').click(function() {
 				  $.ajax({ 
 					  type: "POST", 
-					  url: "process.jsp",//get response from this file
+					  url: "processForm.jsp",//get response from this file
 					  success: function(response){ 
 					   $("textarea#text4").val(response);//send response to textarea
 					}
 				});
 		});
 		});
->>>>>>> 87bc950075d57710978fe1fbdc0ea0a121e0ca6f
+
 		</script>
 	</head>
 	<body>
