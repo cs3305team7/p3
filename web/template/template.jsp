@@ -12,6 +12,14 @@
         //get path
         Page p = new Page("","");
        // out.print(p.createPage());
+       <%
+
+	    HttpSession sess = request.getSession(false);
+	    if(sess !=null){
+	        User user=(User)sess.getAttribute("user");
+	        String PAGE = request.getParameter("page");
+	    }
+	%>
     %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
