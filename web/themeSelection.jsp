@@ -19,33 +19,39 @@
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CMS Builder</title>
-        <link href="stylesheet.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheets/stylesheetTem.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div id="wrapper">
-        <h1>Charity Management Website!</h1>
+        <a href="editHeader_footer.jsp" class="btn">Step 1</a>
+        <a href="editTemplate.jsp" class="btn">Step 2</a>
+         <a href="themeSelection.jsp" class="btn">Step 3</a>	
+         <section id="themeSection">
+         <h1 id="headingTheme"> Select Theme </h1>
         <form id="themeSelection" action="themeOne/index.jsp">
-        Theme One <br>
+        <br>
         <input type="hidden" name="Theme" value="theme1"/>
-        <img src="themeOne.png" alt="Charity Case" title=""  />
+        <img id="imgs" src="../images/themeOne.png" alt="Charity Case" title=""  />
         <input id="themebtn" type="submit" value="Select Theme">
+        <br>
         </form>
         <form id="themeSelection" action="themeTwo/index.jsp">
-        Theme Two<br>
+        <br>
         <input type="hidden" name="Theme" value="theme2"/>
-        <img src="themeTwo.png" alt="Charity Case" title=""  />
+        <img id="imgs" src="../images/themeTwo.png" alt="Charity Case" title=""  />
         <input id="themebtn" type="submit" value="Select Theme">
         </form>
         <form id="themeSelection" action="themeThree/index.jsp">
-        Theme Three<br>
+        <br>
         <input type="hidden" name="Theme" value="theme3"/>
-        <img src="themeThree.png" alt="Charity Case" title=""  />
+        <img id="imgs" src="../images/themeThree.png" alt="Charity Case" title=""  />
         <input id="themebtn" type="submit" value="Select Theme">
-        
         </form>
-       <a href="#wrapper" class="btn">Back to Top</a>
+         <a href="#wrapper" class="btn">Back to Top</a>
         <a href="#" class="btn" onclick="history.go(-1)">Go Back</a>
-       <footer>&copy Team 7.</footer>
+        <footer>&copy Team 7.</footer>
+       
+         </section>
         </div><!--closing wrapper div-->
     </body>
 </html>
