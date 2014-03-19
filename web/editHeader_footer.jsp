@@ -19,6 +19,9 @@
 	        User user=(User)sess.getAttribute("user");
 	        String PAGE = request.getParameter("page");
 	    }
+            else{
+                response.sendRedirect("index.jsp");
+            }
     %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,7 +31,7 @@
 		<!--href="../../stylesheets/stylesheetOne.css"--> 
 		<script type="text/javascript">
 		function submitForm() {
-                    $.ajax({type:'POST', url: 'submit.php', data:$('#form2').serialize(), success: function(response) {
+                    $.ajax({type:'POST', url: 'processForm.jsp', data:$('#form2').serialize(), success: function(response) {
                         $('#form2').find('.form_result').html(response);
                     }});
 		</script>

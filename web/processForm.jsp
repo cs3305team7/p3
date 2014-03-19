@@ -66,6 +66,13 @@
                     }
 
                 }
+                else if((value=request.getParameter("text1"))!=null){
+                
+                }
+                else if((value=request.getParameter("text2"))!=null){
+                    
+                }
+                    
             }
             
         }

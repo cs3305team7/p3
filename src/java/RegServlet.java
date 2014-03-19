@@ -258,7 +258,7 @@ public class RegServlet extends HttpServlet {
                 DBManager dbman = new DBManager();
                 User user;
                 try{
-                     ResultSet rs = dbman.query("SELECT * FROM user WHERE "+
+                     ResultSet rs = dbman.query("SELECT * FROM website_admin WHERE "+
                              "email = "+"'"+myemail+"'");
                      if(!rs.first() || !rs.isLast()){
                           session.setAttribute("Error",
@@ -268,7 +268,7 @@ public class RegServlet extends HttpServlet {
                      else{
                          if(rs.getString("password").equals(mypassword)){
                             ResultSet rs1 = dbman.query("SELECT url FROM"+
-                                    " chairty_sites WHERE w_ID = "+"'"+
+                                    " charity_sites WHERE w_ID = "+"'"+
                                     rs.getString("w_ID")+"'");
                             if(rs1.first() && rs1.isLast()){
                                 user=new User(rs.getString("username"),
@@ -283,7 +283,7 @@ public class RegServlet extends HttpServlet {
                 }catch(SQLException e){
                     session.setAttribute("Error",
                         XMLParser.ErrorRetriever.Error.DATABASE_CONNECTION);
-                response.sendRedirect("register.jsp");
+                response.sendRedirect("login.jsp");
                 }
                
       
