@@ -75,7 +75,7 @@
 			alert(msg);
 			$.ajax({
 				   type: "POST",
-				   url: "process.jsp",
+				   url: "processForm.jsp",
 				   data: $("#nav-form").serialize(), // serializes the form's elements. as array of string
 				   success: function(data)
 				   {
@@ -113,7 +113,7 @@
  
           $.ajax({ 
               type: "POST", 
-              url: "process.jsp",//get response from this file
+              url: "processForm.jsp",//get response from this file
               success: function(response){ 
                $("textarea#text").val(response);//send response to textarea
 			}
