@@ -23,6 +23,7 @@
                 String PAGE = request.getParameter("page");
             }else{
                 response.sendRedirect("register.jsp");
+            }
              %>
              <h1>Welcome </h1>
              <p>You are now a couple steps away from setting up your Website!</p>"
