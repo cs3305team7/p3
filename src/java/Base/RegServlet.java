@@ -214,7 +214,16 @@ public class RegServlet extends HttpServlet {
                                     XMLParser.ErrorRetriever.Error.WEBDIR_NOT_MADE);
                                     response.sendRedirect("register.jsp");
                                    }
+                                 worked=dbman.update("INSERT INTO "
+                                         + "webpages (w_ID)"
+                                         + "VALUES("+w_ID+")");
                                  
+                                 if(worked!=1){
+                                     System.out.println("SIXTH UPDATE ERROR");
+                                     session.setAttribute("Error",
+                                    XMLParser.ErrorRetriever.Error.WEBDIR_NOT_MADE);
+                                    response.sendRedirect("register.jsp");
+                                   }
                             /*
                              INSERT INTO id_center(username, guest, registered_user, administrator, website_admin) values ( username, 0, 0, 0, 1);
                              SELECT g_ID FROM id_center WHERE username = username;
