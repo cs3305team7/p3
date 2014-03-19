@@ -4,6 +4,7 @@
     Author     : Thomas
 --%>
 
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.SQLException"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -29,11 +30,22 @@
                         Base.DBManager dbman = new Base.DBManager();
                         
                         try{
-                            dbman.update("INSERT INTO "
-                                    + "website (t_ID,c_ID) values(1,1)"
-                                    + "WHERE w_ID = "+"'"+
-                                    user.getCharityName()+"'");
+                            user.getCharityName();
+                           ResultSet t= dbman.query("SELECT w_ID "
+                                    + "FROM charity_sites "
+                                    + "WHERE url ="
+                                    + ""+"'"+ user.getCharityName()+"'");
+                           if(!t.first()){
+                               response.sendRedirect("editHeader_footer");
+                           }
+                           int w_ID=t.getInt("w_ID");
+                            dbman.update("UPDATE  "
+                                    + "website SET t_ID = 1 , c_ID = 1"
+                                    + " WHERE w_ID = '"
+                                        +w_ID + "'");
                         }catch(Exception e){
+                            sess.setAttribute("Error", XMLParser.ErrorRetriever.Error.TEST);
+                            e.printStackTrace();
                             response.sendRedirect("themeSelection.jsp");
                         }
                     }
