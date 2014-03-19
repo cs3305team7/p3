@@ -108,17 +108,18 @@
                                session.setAttribute("Error",XMLParser.ErrorRetriever.Error.TEST);
                                response.sendRedirect("editHeader_footer.jsp");
                            }
+                          
                            int w_ID=t.getInt("w_ID");
+                           System.out.println("value is: "+value);
+                           System.out.println("w_ID is: "+w_ID);
                          dbman.update("UPDATE  "
                                     + "webpages SET header = '"+value+"'"
-                                    + " WHERE w_ID = '"+
-                                        w_ID + "'");
-                    dbman.update("INSERT INTO webpages(header) VALUES "
-                            + "("+"'"+value+"'" +")");
+                                    + " WHERE w_ID = "+
+                                        w_ID );
                     }catch(SQLException e){
-                    session.setAttribute("Error",XMLParser.ErrorRetriever.Error.TEST);
-                    e.printStackTrace();
-                    response.sendRedirect("editHeader_footer.jsp");
+                        session.setAttribute("Error",XMLParser.ErrorRetriever.Error.TEST);
+                        e.printStackTrace();
+                        response.sendRedirect("editHeader_footer.jsp");
                     }
                                        
                     response.sendRedirect("editHeader_footer.jsp");
