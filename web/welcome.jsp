@@ -92,11 +92,11 @@
 
       <div class="row-fluid marketing">
         <div class="span6">
-          <h1>Welcome </h1>
+          <h1>Congratulations on registering! </h1>
              <p>You are now a couple steps away from setting up your Website!</p>
-                <a href="editHeader_footer.jsp" class="btn">Step 1: Building the header & footer of your website.</a>
-                <a href="editTemplate.jsp" class="btn">Step 2: Editing the layout of your pages.</a>
-                <a href="themeSelection.jsp" class="btn">Step 3: Selecting your website look.</a>
+                <a href="editHeader_footer.jsp" class="btn">Step 1</a>
+                <a href="editTemplate.jsp" class="btn">Step 2</a>
+                <a href="themeSelection.jsp" class="btn">Step 3</a>
 
         </div>
       </div>
