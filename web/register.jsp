@@ -14,10 +14,15 @@
     <body>
         <h1>hello <% 
         
+    HttpSession sess = request.getSession(false);
+    if(sess !=null){
+        User user=(User)sess.getAttribute("user");
+        String PAGE = request.getParameter("page");
         
         XMLParser.ErrorRetriever.Error e=(XMLParser.ErrorRetriever.Error)session.getAttribute("Error");
         XMLParser.ErrorRetriever ret = new XMLParser.ErrorRetriever();
         out.println(ret.getError(e.toString()));
+        }
         
        %></h1>
         <form name="registration" action="RegServlet" method="post">
