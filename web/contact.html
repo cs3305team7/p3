@@ -1,0 +1,138 @@
+<html>
+
+<head><script LANGUAGE="JavaScript">
+
+<!-- This script and many more are available online from -->
+<!-- The JavaScript Source!! http://javascriptsource.com -->
+
+<!-- Begin
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;             
+if (dc.length > 0) {              
+begin = dc.indexOf(cname);       
+if (begin != -1) {           
+begin += cname.length;       
+end = dc.indexOf(";", begin);
+if (end == -1) end = dc.length;
+return unescape(dc.substring(begin, end));
+   } 
+}
+return null;
+}
+function setCookie(name, value, expires) {
+document.cookie = name + "=" + escape(value) + 
+((expires != null) ? "; expires=" + expires.toGMTString() : "")
++ "; path=/";
+}
+function setName() {
+var expdate = new Date ();
+expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 365));
+var prompt=i = document.Mail.name.value;
+setCookie("name", i, expdate);
+}
+function getName() {
+if(getCookie("name") != null) {
+document.Mail.Name.value = getCookie("emailname");
+   }
+}
+function getInfo() {
+var now= new Date();
+document.Mail.Info.value = "Browser: " + navigator.userAgent;
+document.Mail.Info.value += "Date:" + now;
+}
+function checkMultiple() {
+if (getCookie("emailsent") == 'true') return true;
+else return false;
+}
+function process() {
+setCookie("emailsent", "true");
+with (document.Mail) {
+if (Subject.selectedIndex == 1) action = "mailto:bryanosullivan09@gmail.com?subject=CMS - Comment";
+else if (Subject.selectedIndex == 2) action = "mailto:bryanosullivan09@gmail.com?subject=CMS - Question";
+else if (Subject.selectedIndex == 3) action = "mailto:bryanosullivan09@gmail.com?subject=CMS - Suggestion";
+else if (Subject.selectedIndex == 4) action = "mailto:bryanosullivan09@gmail.com?subject=CMS - Broken Link";
+else action = "mailto:antispammer@earthling.net?subject=CMS - Other";
+   }
+}
+function formCheck() {
+var passed = false;
+with (document.Mail) {
+if (Subject.selectedIndex == 0) { 
+alert("Please pick a subject.");
+Subject.focus();
+}
+else if (Name.value == "") {
+alert("Please inlcude your name.");
+Name.focus();
+}
+else if (checkMultiple()) {
+if (confirm("You just sent an e-mail from this form, are you sure you want to send another?")) {
+process();
+passed = true;
+   }
+}
+else {
+process();
+passed = true;
+   }
+}
+return passed;
+}
+// End -->
+</script>
+
+<title>CMS</title>
+<base target="leftframe">
+</head>
+
+<body BGCOLOR="#ffffff" link="#CC0033" vlink="#333399" alink="#FF0000" <!--content start-->
+
+
+<table WIDTH="96%" BORDER="0" CELLSPACING="5" CELLPADDING="5">
+  <tr>
+    <td WIDTH="100%">
+    <p align="center"><font FACE="Times" SIZE="3">Any thing you would like to tell us? Any
+    comments, suggestions, or questions? If you are using Internet Explorer or would rather
+    mail directly, then click <a HREF="mailto:bryanosullivan09@gmail.com?subject=CMS - Mail">here</a>.
+    <br>
+    </p>
+    <form NAME="Mail" ACTION="mailto:bryanosullivan09@gmail.com?subject=CMS - Form"
+    METHOD="POST" ENCTYPE="text/plain" onSubmit="return formCheck();">
+      <input type="hidden" name="Info" value><table BORDER="0" CELLPADDING="10" CELLSPACING="0">
+        <tr>
+          <td>Name: <input TYPE="text" NAME="Name" onChange="setName()" size="20"> </td>
+          <td ALIGN="RIGHT">Subject: <select NAME="Subject" size="1">
+            <option SELECT>Please Select A Subject</option>
+            <option>1. Comment</option>
+            <option>2. Question</option>
+            <option>3. Suggestion</option>
+            <option>4. Broken Link</option>
+            <option>5. None of the above</option>
+          </select> </td>
+        </tr>
+        <tr>
+          <td COLSPAN="2">Comments, questions, suggestions, broken links, anything!! : <br>
+          <br>
+          <textarea NAME="Comments, Suggestions" COLS="50" ROWS="6">
+</textarea> </td>
+        </tr>
+      </table>
+      <div align="center"><center><table>
+        <tr>
+          <td align="center"><input TYPE="submit" VALUE="Send"> <script LANGUAGE="JavaScript">
+<!-- Begin
+getInfo();
+getName();
+// End -->
+</script></font></font></td>
+        </tr>
+      </table>
+      </center></div>
+    </form>
+    </td>
+  </tr>
+</table>
+<!--content stop-->
+</body>
+</html>
