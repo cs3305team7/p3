@@ -53,10 +53,19 @@
                         Base.DBManager dbman = new Base.DBManager();
                         
                         try{
-                            dbman.update("INSERT INTO "
-                                    + "website (t_ID,c_ID) values(1,2)"
-                                    + "WHERE w_ID = "+"'"+
-                                    user.getCharityName()+"'");
+                             user.getCharityName();
+                           ResultSet t= dbman.query("SELECT w_ID "
+                                    + "FROM charity_sites "
+                                    + "WHERE url ="
+                                    + ""+"'"+ user.getCharityName()+"'");
+                           if(!t.first()){
+                               response.sendRedirect("editHeader_footer");
+                           }
+                           int w_ID=t.getInt("w_ID");
+                            dbman.update("UPDATE  "
+                                    + "website SET t_ID = 1 , c_ID = 2"
+                                    + " WHERE w_ID = '"
+                                        +w_ID + "'");
                         }catch(Exception e){
                             response.sendRedirect("themeSelection.jsp");
                         }
@@ -65,10 +74,19 @@
                         Base.DBManager dbman = new Base.DBManager();
                         
                         try{
-                            dbman.update("INSERT INTO "
-                                    + "website (t_ID,c_ID) values(2,1)"
-                                    + "WHERE w_ID = "+"'"+
-                                    user.getCharityName()+"'");
+                             user.getCharityName();
+                           ResultSet t= dbman.query("SELECT w_ID "
+                                    + "FROM charity_sites "
+                                    + "WHERE url ="
+                                    + ""+"'"+ user.getCharityName()+"'");
+                           if(!t.first()){
+                               response.sendRedirect("themeSelection.jsp");
+                           }
+                           int w_ID=t.getInt("w_ID");
+                            dbman.update("UPDATE  "
+                                    + "website SET t_ID = 2 , c_ID = 1"
+                                    + " WHERE w_ID = '"
+                                        +w_ID + "'");
                         }catch(Exception e){
                             response.sendRedirect("themeSelection.jsp");
                         }
@@ -82,10 +100,25 @@
                 else if((value=request.getParameter("text1"))!=null){
                     Base.DBManager dbman = new Base.DBManager();
                     try{
+                        ResultSet t= dbman.query("SELECT w_ID "
+                                    + "FROM charity_sites "
+                                    + "WHERE url ="
+                                    + ""+"'"+ user.getCharityName()+"'");
+                           if(!t.first()){
+                               session.setAttribute("Error",XMLParser.ErrorRetriever.Error.TEST);
+                               response.sendRedirect("editHeader_footer.jsp");
+                           }
+                           int w_ID=t.getInt("w_ID");
+                         dbman.update("UPDATE  "
+                                    + "webpages SET header = '"+value+"'"
+                                    + " WHERE w_ID = '"+
+                                        w_ID + "'");
                     dbman.update("INSERT INTO webpages(header) VALUES "
                             + "("+"'"+value+"'" +")");
                     }catch(SQLException e){
-                    
+                    session.setAttribute("Error",XMLParser.ErrorRetriever.Error.TEST);
+                    e.printStackTrace();
+                    response.sendRedirect("editHeader_footer.jsp");
                     }
                                        
                     response.sendRedirect("editHeader_footer.jsp");
