@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "RegServlet", urlPatterns = {"/RegServlet"})
 public class RegServlet extends HttpServlet {
-    private String PATH ="C:/Users/tpc2/Desktop/Project1/build/web/";//"C:/Users/Thomas/Documents/NetBeansProjects/Project1/Project1/build/web/";
+    private String PATH ="C:/Users/tpc2/Desktop/p3-master/build/web/";//"C:/Users/Thomas/Documents/NetBeansProjects/Project1/Project1/build/web/";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -83,14 +83,14 @@ public class RegServlet extends HttpServlet {
             throws ServletException, IOException {
         
        
-                
+        String hidden_parameter = request.getParameter("pagename");   
         //processRequest(request, response);
         HttpSession session = request.getSession(true);
         
-          
+        if(hidden_parameter.equals("register")){  
                 
         DBManager manager = new DBManager();
-        String hidden_parameter = request.getParameter("pagename");
+       
        String fname=request.getParameter("txtFName");
         String lname=request.getParameter("txtLName");
         String email=request.getParameter("txtEmail");
@@ -130,7 +130,7 @@ public class RegServlet extends HttpServlet {
                     
                     try{
 
-                        if( false && f.mkdir()){
+                        if( f.mkdir()){
                             User user =new User(UserName,fname, lname,
                             email, password,charityName);
                             session.setAttribute("USER", user);
@@ -226,9 +226,10 @@ public class RegServlet extends HttpServlet {
                             
                            response.sendRedirect("welcome.jsp");
                         }
-                        else{
+                       else{
                             session.setAttribute("Error",
                             XMLParser.ErrorRetriever.Error.WEBDIR_NOT_MADE);
+                            System.out.println("WHAT NOW :O");
                             response.sendRedirect("register.jsp");
                         }
                     }catch(Exception e){
@@ -245,18 +246,13 @@ public class RegServlet extends HttpServlet {
                 sets.setLname(lname);
                 sets.setEmail(email);
                 sets.setPassword(password);
-                try {
-                    //manager.Insert(sets);
-                    //response.sendRedirect("welcome.jsp");
-                }/* catch (SQLException ex) {
-                   // Logger.getLogger(RegServlet.class.getName()).
-                log(Level.SEVERE, null, ex);
-                    ex.printStackTrace();
-                }*/catch(Exception ex){ex.printStackTrace();}
-                    } //end of register if statement
+                
                 }
-    
-            else if (hidden_parameter.equals("login")) {
+           else{
+               response.sendRedirect("register.jsp");
+           }
+        }
+        }else if (hidden_parameter.equals("login")) {
                 String myemail = request.getParameter("txtEmail");
                 String mypassword = request.getParameter("txtPassword");
                 DBManager dbman = new DBManager();
@@ -291,7 +287,8 @@ public class RegServlet extends HttpServlet {
                 }
                
       
-        } //end of log in if statement
-    }//end of doPost
+        }
+    //end of log in if statement
     
-} //end of main Class
+    } //end of doPost
+}//end of main Class
