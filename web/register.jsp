@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,13 +35,14 @@
         XMLParser.ErrorRetriever.Error e=(XMLParser.ErrorRetriever.Error)session.getAttribute("Error");
         XMLParser.ErrorRetriever ret = new XMLParser.ErrorRetriever();
         if(e!=null){
-            out.println(ret.getError(e.toString()));
+            out.println(e.toString());
         }
         
         
        %></h1>
 
-      <form class="form-signin" role="form">
+      <form class="form-signin" action ="RegServlet"  method="post" id="register" role="form">
+          <input type="hidden" name="pagename" value="register"/>
         <h2 class="form-signin-heading">Please register</h2>
         <input type="text" name="txtFName" class="form-control" placeholder="First Name" required autofocus>
         <input type="text" name="txtLName" class="form-control" placeholder="Last Name" required autofocus>
