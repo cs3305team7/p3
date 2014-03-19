@@ -19,7 +19,7 @@
             
             HttpSession sess = request.getSession(false);
             if(sess !=null){
-                User user=(User)sess.getAttribute("user");
+                Base.User user=(Base.User)sess.getAttribute("user");
                 String PAGE = request.getParameter("page");
             }else{
                 response.sendRedirect("register.jsp");
