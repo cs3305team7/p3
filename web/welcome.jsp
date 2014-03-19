@@ -21,13 +21,16 @@
             if(sess !=null){
                 User user=(User)sess.getAttribute("user");
                 String PAGE = request.getParameter("page");
-             out.print(   "<h1>Welcome </h1>"+ 
-            "<p>You are now a couple steps away from setting up your Website!</p>"+
-            '<a href="editHeader_footer.jsp" class="btn">Step 1</a>'+
-            '<a href="editTemplate.jsp" class="btn">Step 2</a>'+
-             '<a href="themeSelection.jsp" class="btn">Step 3</a>")";
+            }else{
+                response.sendRedirect("register.jsp");
+             %>
+             <h1>Welcome </h1>
+             <p>You are now a couple steps away from setting up your Website!</p>"
+                <a href="editHeader_footer.jsp" class="btn">Step 1</a>'+
+                <a href="editTemplate.jsp" class="btn">Step 2</a>'+
+                <a href="themeSelection.jsp" class="btn">Step 3</a>")";
              }
-         %>
+         
         </div>
     </body>
 </html>
