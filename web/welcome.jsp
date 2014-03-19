@@ -30,7 +30,7 @@
                 <a href="editHeader_footer.jsp" class="btn">Step 1</a>
                 <a href="editTemplate.jsp" class="btn">Step 2</a>
                 <a href="themeSelection.jsp" class="btn">Step 3</a>
-             }
+            
          
         </div>
     </body>
