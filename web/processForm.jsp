@@ -13,28 +13,58 @@
     </head>
     <body>
         <%
+
         
         HttpSession sess = request.getSession(false);
         if(sess !=null){
-            User user=(User)sess.getAttribute("user");
             String PAGE = request.getParameter("page");
-        
-            String name =(String)session.getAttribute("form");
-            String value;
-            if((value=request.getParameter("Theme"))!=null){
-                //response.sendRedirect("");
-                if(value.equals("theme1")){
-                    
-                }
-                else if(value.equals("theme2")){
-                
-                }
-                else if(value.equals("theme3")){
-                    
-                }
-                else{
-                    //session.setErrors
-                    response.sendRedirect("themeSelection.jsp");
+            User user;
+            if(null!=(user=(User)session.getAttribute("USER"))){
+                String name =(String)session.getAttribute("form");
+                String value;
+                if((value=request.getParameter("Theme"))!=null){
+                    //response.sendRedirect("");
+                    if(value.equals("theme1")){
+                        DBManager dbman = new DBManager();
+                        
+                        try{
+                            dbman.update("INSERT INTO "
+                                    + "website (t_ID,c_ID) values(1,1)"
+                                    + "WHERE w_ID = "+"'"+
+                                    user.getCharityName()+"'");
+                        }catch(Exception e){
+                            response.sendRedirect("themeSelection.jsp");
+                        }
+                    }
+                    else if(value.equals("theme2")){
+                        DBManager dbman = new DBManager();
+                        
+                        try{
+                            dbman.update("INSERT INTO "
+                                    + "website (t_ID,c_ID) values(1,2)"
+                                    + "WHERE w_ID = "+"'"+
+                                    user.getCharityName()+"'");
+                        }catch(Exception e){
+                            response.sendRedirect("themeSelection.jsp");
+                        }
+                    }
+                    else if(value.equals("theme3")){
+                        DBManager dbman = new DBManager();
+                        
+                        try{
+                            dbman.update("INSERT INTO "
+                                    + "website (t_ID,c_ID) values(2,1)"
+                                    + "WHERE w_ID = "+"'"+
+                                    user.getCharityName()+"'");
+                        }catch(Exception e){
+                            response.sendRedirect("themeSelection.jsp");
+                        }
+                    }
+                    else{
+                        //session.setErrors
+                        response.sendRedirect("themeSelection.jsp");
+                    }
+
                 }
             }
             

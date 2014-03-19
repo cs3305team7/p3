@@ -270,7 +270,7 @@ public class RegServlet extends HttpServlet {
                         response.sendRedirect("login.jsp");
                      } 
                      else{
-                         if(rs.getString("passord").equals(mypassword)){
+                         if(rs.getString("password").equals(mypassword)){
                             ResultSet rs1 = dbman.query("SELECT url FROM"+
                                     " chairty_sites WHERE w_ID = "+"'"+
                                     rs.getString("w_ID")+"'");
