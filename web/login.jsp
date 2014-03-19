@@ -5,6 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+
+    HttpSession sess = request.getSession(false);
+    if(sess !=null){
+        User user=(User)sess.getAttribute("user");
+        String PAGE = request.getParameter("page");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
