@@ -13,6 +13,12 @@
     </head>
     <body>
         <%
+        
+        HttpSession sess = request.getSession(false);
+        if(sess !=null){
+            User user=(User)sess.getAttribute("user");
+            String PAGE = request.getParameter("page");
+        
             String name =(String)session.getAttribute("form");
             String value;
             if((value=request.getParameter("Theme"))!=null){
@@ -32,7 +38,7 @@
                 }
             }
             
-        
+        }
         %>
     </body>
 </html>
