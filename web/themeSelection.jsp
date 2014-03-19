@@ -8,7 +8,7 @@
 
     HttpSession sess = request.getSession(false);
     if(sess !=null){
-        User user=(User)sess.getAttribute("user");
+        Base.User user=(Base.User)sess.getAttribute("user");
         String PAGE = request.getParameter("page");
     }
 %>
@@ -82,7 +82,7 @@
         <ul class="nav nav-pills pull-right">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li class="active"><a href="#">Contact</a></li>
+          <li><a href="contactUs.html">Contact</a></li>
         </ul>
         <h3 class="muted">Charity Management Website</h3>
       </div>
@@ -91,9 +91,6 @@
         <div class="span6">
           <h1>Congratulations on registering! </h1>
              <p>You are now a couple steps away from setting up your Website!</p>
-                <a href="editHeader_footer.jsp" class="btn">Step 1</a>
-                <a href="editTemplate.jsp" class="btn">Step 2</a>
-                <a href="themeSelection.jsp" class="btn">Step 3</a>
         <a href="editHeader_footer.jsp" class="btn">Step 1</a>
         <a href="editTemplate.jsp" class="btn">Step 2</a>
          <a href="themeSelection.jsp" class="btn">Step 3</a>	
