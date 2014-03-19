@@ -4,6 +4,7 @@
     Author     : Thomas
 --%>
 
+<%@page import="java.sql.SQLException"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,14 +19,14 @@
         HttpSession sess = request.getSession(false);
         if(sess !=null){
             String PAGE = request.getParameter("page");
-            User user;
-            if(null!=(user=(User)session.getAttribute("USER"))){
+            Base.User user;
+            if(null!=(user=(Base.User)session.getAttribute("USER"))){
                 String name =(String)session.getAttribute("form");
                 String value;
                 if((value=request.getParameter("Theme"))!=null){
                     //response.sendRedirect("");
                     if(value.equals("theme1")){
-                        DBManager dbman = new DBManager();
+                        Base.DBManager dbman = new Base.DBManager();
                         
                         try{
                             dbman.update("INSERT INTO "
@@ -37,7 +38,7 @@
                         }
                     }
                     else if(value.equals("theme2")){
-                        DBManager dbman = new DBManager();
+                        Base.DBManager dbman = new Base.DBManager();
                         
                         try{
                             dbman.update("INSERT INTO "
@@ -49,7 +50,7 @@
                         }
                     }
                     else if(value.equals("theme3")){
-                        DBManager dbman = new DBManager();
+                        Base.DBManager dbman = new Base.DBManager();
                         
                         try{
                             dbman.update("INSERT INTO "
@@ -67,10 +68,25 @@
 
                 }
                 else if((value=request.getParameter("text1"))!=null){
+                    Base.DBManager dbman = new Base.DBManager();
+                    try{
+                    dbman.update("INSERT INTO webpages(header) VALUES "
+                            + "("+"'"+value+"'" +")");
+                    }catch(SQLException e){
                     
+                    }
+                                       
+                    response.sendRedirect("editHeader_footer.jsp");
                 }
                 else if((value=request.getParameter("text2"))!=null){
-                    
+                    Base.DBManager dbman = new Base.DBManager();
+                    try{
+                    dbman.update("INSERT INTO webpages(footer) VALUES "
+                            + "("+"'"+value+"'" +")");
+                    response.sendRedirect("editHeader_footer.jsp");
+                    }catch(SQLException e){
+                        
+                    }
                 }
                     
             }
