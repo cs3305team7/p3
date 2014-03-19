@@ -35,7 +35,9 @@
         
         XMLParser.ErrorRetriever.Error e=(XMLParser.ErrorRetriever.Error)session.getAttribute("Error");
         XMLParser.ErrorRetriever ret = new XMLParser.ErrorRetriever();
-        out.println(ret.getError(e.toString()));
+        if(e!=null){
+            out.println(ret.getError(e.toString()));
+        }
         
         
        %></h1>

@@ -18,7 +18,7 @@ import org.w3c.dom.NodeList;
  */
 public class ErrorRetriever extends DOMParser{
     private DOMParser DOM;
-    public final static String ERRORS_FILE="C:/Users/tpc2/Desktop/Project1/build/web/WEB-INF/classes/XMLParser/errors.xml";
+    public final static String ERRORS_FILE="C:/Users/Thomas\\Documents\\GitHub\\p3\\src\\java\\XMLParser/errors.xml";
     public static enum Error{
         TEST,WEBDIR_NOT_MADE,DATABASE_CONNECTION,
         CHARITY_ALREADY_EXISTS;
