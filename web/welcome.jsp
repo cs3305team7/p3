@@ -84,7 +84,7 @@
         <ul class="nav nav-pills pull-right">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li class="active"><a href="#">Contact</a></li>
+          <li><a href="contactUs.html">Contact</a></li>
         </ul>
         <h3 class="muted">Charity Management Website</h3>
       </div>
