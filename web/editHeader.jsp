@@ -1,6 +1,6 @@
 <%-- 
-    Document   : header_footer
-    Created on : 08-Mar-2014, 17:57:58
+    Document   : editHeader
+    Created on : 19-Mar-2014, 20:55:51
     Author     : as11
 --%>
 
@@ -30,46 +30,19 @@
 		
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheetTem.css" id="stylesheet">
 		<!--href="../../stylesheets/stylesheetOne.css"--> 
-		<script type="text/javascript">
-	
-
-		$(document).ready(function() {
-		   $('#textarea2').click(function() {
-				  $.ajax({ 
-					  type: "POST", 
-					  url: "processForm.jsp",//get response from this file
-					  success: function(response){ 
-					   $("textarea#text2").val(response);//send response to textarea
-					}
-				});
-		});
-		});
-		//////////////////////////////////////////////////////////////////////////////// end of header 
-		////////////////////////////////////////////////////////////////////////////////start of footer
-		$(document).ready(function() {
-		   $('#textarea4').click(function() {
-				  $.ajax({ 
-					  type: "POST", 
-					  url: "processForm.jsp",//get response from this file
-					  success: function(response){ 
-					   $("textarea#text4").val(response);//send response to textarea
-					}
-				});
-		});
-		});
-
-		</script>
 	</head>
 	<body>
               
             <div id="wrapper">
-                <a href="editHeader_footer.jsp" class="btn">Step 1</a>
-                <a href="editTemplate.jsp" class="btn">Step 2</a>
-                <a href="themeSelection.jsp" class="btn">Step 3</a>		
+                <a href="editHeader.jsp" class="btn">Step 1</a>
+                <a href="editFooter.jsp" class="btn">Step 2</a>
+                <a href="editNav.jsp" class="btn">Step 3</a>	
+                <a href="eContent.jsp" class="btn">Step 4</a>	
+		<a href="themeSelection.jsp" class="btn">Step 5</a>					
                 <div id="CONTENT">
 		
                     <header id="HEADER">
-			<form id="header">
+						<form id="header" action="processForm.jsp" method="POST" >
                         <h2>Header Content</h2>
                               <div id="toolbar2" style="display: none;">
                                <a data-wysihtml5-action="change_view">html view</a> <br> <br>
@@ -86,25 +59,9 @@
                     <script src="simple.js"></script>
                     <script src="wysihtml5-0.4.0pre.js"></script>
                 
-			</form>
+					</form>
                     </header>
-		
-		
-                    <footer id="FOOTER">
-			 <form id="footer">
-                        <h2>Footer Content</h2>
-                            <div id="toolbar4" style="display: none;">
-                            <a data-wysihtml5-action="change_view">html view</a> <br> <br>
-                            <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
-                            <a data-wysihtml5-command="italic" title="CTRL+I">italic</a>
-                            </div>
-                            <textarea name ="text4" id="textarea4" placeholder="Enter text ..."><%/* out.print(p.Get("FOOTER"));*/%></textarea>
-                            <br><input type="reset" value="Reset form!">
-                            <input class="buttons" id="Submit2" type="submit" value="Submit!">
-                            <div id="log4"></div>
-                            
-			</form>
-                    </footer>
+	
                             <a href="#wrapper" class="btn">Back to Top</a>
                              <a href="#" class="btn" onclick="history.go(-1)">Go Back</a>
                               <footer>&copy Team 7.</footer>  
@@ -122,15 +79,9 @@
 							  
 							
 							  
-							    var editor4 = new wysihtml5.Editor("textarea4", {
-								toolbar:        "toolbar4",
-								stylesheets:    "stylesheet.css",
-								parserRules:    wysihtml5ParserRules
-							  });
-							  
+							 
 							  var log2 = document.getElementById("log2");
-							  var log4 = document.getElementById("log4");
-							  
+							
 							  
 								editor2
 								.on("load", function() {
@@ -159,31 +110,6 @@
 								});
 								
 								
-								editor4
-								.on("load", function() {
-								  log4.innerHTML += "";
-								})
-								.on("focus", function() {
-								  log4.innerHTML += "";
-								})
-								.on("blur", function() {
-								  log4.innerHTML += "";
-								})
-								.on("change", function() {
-								  log4.innerHTML += "";
-								})
-								.on("paste", function() {
-								  log4.innerHTML += "";
-								})
-								.on("newword:composer", function() {
-								  log4.innerHTML += "";
-								})
-								.on("undo:composer", function() {
-								  log4.innerHTML += "";
-								})
-								.on("redo:composer", function() {
-								  log4.innerHTML += "";
-								});
 								
 								
 							</script>

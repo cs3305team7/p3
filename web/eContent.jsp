@@ -1,8 +1,9 @@
 <%-- 
-    Document   : editTemplate
-    Created on : 08-Mar-2014, 17:58:32
+    Document   : eContent
+    Created on : 19-Mar-2014, 21:05:15
     Author     : as11
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,133 +31,21 @@
 		
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheetTem.css" id="stylesheet">
 		<!--href="../../stylesheets/stylesheetOne.css"--> 
-			<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
-			<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
-			<!--library used to test was jqurey 1.11.0-->
-		<script type="text/javascript">
-		 //////////////////////////////////////////////////////////////////// JAVASCRIPT FOR NAVIGATION
-		$(document).ready(function(){
-			var counter = 1;
-                        $("#addButton").click(function () {
-			if(counter>9){
-				alert("Only 10 textboxes allow");
-				return false;
-			}   
-			var newTextBoxDiv = $(document.createElement('div'))
-				 .attr("id", 'TextBoxDiv' + counter);
-		 
-			newTextBoxDiv.after().html('<label>Name #'+ counter + ' : </label>' +
-				  '<input type="text" name="textbox' + counter + 
-				  '" id="textbox' + counter + '" value="" >' +     '<label>URL #'+ counter + ' : </label>' +
-				  '<input type="text" name="textbox' + counter + 
-				  '" id="url' + counter + '" value="" >');
-		 
-			newTextBoxDiv.appendTo("#TextBoxesGroup");
-                        counter++;
-			 });
-		 
-			 $("#removeButton").click(function () {
-			if(counter==1){
-				  alert("No more textbox to remove");
-				  return false;
-			   }   
-		 
-			counter--;
-		 
-				$("#TextBoxDiv" + counter).remove();
-		 
-			 });
-		 
-			 $("#getButtonValue").click(function () {
-			var msg = '';
-			for(i=1; i<=counter; i++){
-				msg += "\n Textarea #" + i + " : " + $('#textbox' + i).val() + " URL #"+ i + ":" + $('#url' + i).val();     
-			}
-			alert(msg);
-			$.ajax({
-				   type: "POST",
-				   url: "processForm.jsp",
-				   data: $("#nav-form").serialize(), // serializes the form's elements. as array of string
-				   success: function(data)
-				   {
-					   alert(data); // show response from the jsp script.
-				   }
-				 });
-
-			return false; // avoid to execute the actual submit of the form.	  
-				  
-			 });
-		  });
-		  
-		// this is the id of the form
-		//$("#nav-form").submit(function() {
-
-			//var url = "process.jsp"; // the script where you handle the form input.
-
-			//$.ajax({
-			//	   type: "POST",
-			//	   url: "process.jsp",
-				   //data: $("#nav-form").serialize(), // serializes the form's elements.
-				//   success: function(data)
-				//   {
-				//	   alert(data); // show response from the jsp script.
-				 //  }
-				 //});
-
-			//return false; // avoid to execute the actual submit of the form.
-		//});
-////////////////////////////////////////////////////////////////////////////////////// END OF JAVASCRIPT FOR NAVIGATION		
-////////////////////////////////////////////////////////////////////////////////////// textarea javascript code
-
- $(document).ready(function() {
-   $('#textarea').click(function() {
- 
-          $.ajax({ 
-              type: "POST", 
-              url: "processForm.jsp",//get response from this file
-              success: function(response){ 
-               $("textarea#text").val(response);//send response to textarea
-			}
-	    });
-});
-});
-///////////////////////////////////////////////////////////////////////////////////////////// end of textarea for javascript
-</script>
+		
 	</head>
 	<body>
                 
 	  <div id="wrapper">
-	  <a href="editHeader_footer.jsp" class="btn">Step 1</a>
-        <a href="editTemplate.jsp" class="btn">Step 2</a>
-         <a href="themeSelection.jsp" class="btn">Step 3</a>	
+                 <a href="editHeader.jsp" class="btn">Step 1</a>
+                <a href="editFooter.jsp" class="btn">Step 2</a>
+                <a href="editNav.jsp" class="btn">Step 3</a>	
+                <a href="eContent.jsp" class="btn">Step 4</a>	
+		<a href="themeSelection.jsp" class="btn">Step 5</a>	
 	   <div>
 		</div> 
-			<nav id="EDITABLENAV">
-						<form id="nav-form">
-                              <h2>Navigation Form</h2>
-						 <%/** out.print(p.Get("EDITABLENAV"));**/%><br>
-						 <br>
-						 <div id='TextBoxesGroup'>
-								<div id="TextBoxDiv1">
-									<label>Name #0 : </label><input type='textbox' id='textbox' >
-									<label> URL #0: </label><input type='textbox' id='url' >
-								</div>
-							</div>
-							<input type='button' value='Add Button' id='addButton'>
-							<input type='button' value='Remove Button' id='removeButton'>
-							<input type='button' value='Get TextBox Value' id='getButtonValue'>
-						 </form>
-			</nav> 
-                    <aside id="PICS">
-                        <h2>Images Column</h2>
-                        <%/** out.print(p.Get("PICS"));*/%><br> <br>
-						IMAGE UPLOAD INCOMPLETE!
-		   </aside>
-
-
                     <div id="CONTENT">
                         
-						<form name="ajaxform" id="ajaxform">
+			<form name="ajaxform" id="ajaxform" action="processForm.jsp" method="POST">
                            <h2>Main Content</h2>
 						  <div id="toolbar" style="display: none;">
 						  <a data-wysihtml5-action="change_view">html view</a> <br> <br>
