@@ -30,6 +30,7 @@ public class PageAdder {
         this.pagename=name;
         PATH+=user.getCharityName()+"/";
         String templ=getTemplate();
+        String lol="lol";
         if(templ!=null){
             TemplatePath+=templ;
         }
