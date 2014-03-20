@@ -86,38 +86,51 @@
             <h3 class="muted">Charity Management Website</h3>
             </div>  
             <div class="row-fluid marketing">
-                <div class="span6">
-                    <h1>Congratulations on registering! </h1>
-                    <p>You are now a couple steps away from setting up your Website!</p>   
+                <div class="span6">  
                     <a href="editHeader.jsp" class="btn">Step 2</a>
              
                     <section id="themeSection">
                         <h1 id="headingTheme"> Select Theme </h1>
-                        <form id="themeSelection" action="themeOne/index.jsp">
+                        <form id="themeSelection" action="processForm.jsp">
                             <br>
                                 <input type="hidden" name="Theme" value="theme1"/>
                                 <img id="imgs" src="../images/themeOne.png" alt="Charity Case" title=""  />
-                                <input id="themebtn" type="submit" value="Select Theme">
+                                <input id="themebtn" type="submit"  class="btn btn-success" value="Select Theme">
                                     <br>
                                 </form>
-                                <form id="themeSelection" action="themeTwo/index.jsp">
+                                <form id="themeSelection" action="processForm.jsp">
                                     <br>
                                     <input type="hidden" name="Theme" value="theme2"/>
                                     <img id="imgs" src="../images/themeTwo.png" alt="Charity Case" title=""  />
-                                    <input id="themebtn" type="submit" value="Select Theme">
+                                    <input id="themebtn" type="submit"  class="btn btn-success" value="Select Theme">
                                 </form>
-                                <form id="themeSelection" action="themeThree/index.jsp">
+                                <form id="themeSelection" action="processForm.jsp">
                                     <br>
                                     <input type="hidden" name="Theme" value="theme3"/>
                                     <img id="imgs" src="../images/themeThree.png" alt="Charity Case" title=""  />
-                                    <input id="themebtn" type="submit" value="Select Theme">
+                                    <input id="themebtn" type="submit"  class="btn btn-success" value="Select Theme">
                                 </form>
-                                <a href="#wrapper" class="btn">Back to Top</a>
-                                <a href="#" class="btn" onclick="history.go(-1)">Go Back</a>
+                                <br>
+                                <a href="#" class="btn btn-warning" onclick="history.go(-1)">Go Back</a>
+                                <hr>
                                 <footer>&copy Team 7.</footer>
                         </section>
                 </div>
+            </div>
          </div>
+                <script src="../assets/js/jquery.js"></script>
+                <script src="../assets/js/bootstrap-transition.js"></script>
+                <script src="../assets/js/bootstrap-alert.js"></script>
+                <script src="../assets/js/bootstrap-modal.js"></script>
+                <script src="../assets/js/bootstrap-dropdown.js"></script>
+                <script src="../assets/js/bootstrap-scrollspy.js"></script>
+                <script src="../assets/js/bootstrap-tab.js"></script>
+                <script src="../assets/js/bootstrap-tooltip.js"></script>
+                <script src="../assets/js/bootstrap-popover.js"></script>
+                <script src="../assets/js/bootstrap-button.js"></script>
+                <script src="../assets/js/bootstrap-collapse.js"></script>
+                <script src="../assets/js/bootstrap-carousel.js"></script>
+                <script src="../assets/js/bootstrap-typeahead.js"></script>
     </body>
 </html>
 
