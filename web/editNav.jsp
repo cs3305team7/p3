@@ -74,12 +74,8 @@
 	</head>
 	<body>
                 
-	  <div id="wrapper">
-             <a href="editHeader.jsp" class="btn">Step 1</a>
-                <a href="editFooter.jsp" class="btn">Step 2</a>
-                <a href="editNav.jsp" class="btn">Step 3</a>	
-                <a href="eContent.jsp" class="btn">Step 4</a>	
-		<a href="themeSelection.jsp" class="btn">Step 5</a>		
+	  <div id="wrapper">	
+		<a href="editFooter.jsp" class="btn">Step 5</a>		
 	   <div>
 		</div> 
 			<nav id="EDITABLENAV">
