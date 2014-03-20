@@ -140,7 +140,7 @@
                         
                     }
                 }
-                else{
+                else if(request.getParameter("name")!=null && request.getParameter("url")!=null){
                      //out.println("THIS IS A PROBLEM I DON'T UNDERSTAND THIS");
                      response.sendRedirect("welcome.jsp");
                                }
