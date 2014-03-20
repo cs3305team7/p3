@@ -23,6 +23,7 @@ public class PageAdder {
     private String pagename;
     private String PATH = "Z:/p3-masterV3/build/web/";
     private String TemplatePath="Z:/p3-masterV3/build/web/";
+    
    
     public PageAdder(User user, String name)throws Exception{
         this.user=user;
@@ -49,6 +50,10 @@ public class PageAdder {
            if(rs!=null && rs.first() && rs.isLast()){
                if(rs.getInt("t_ID")==0){
                    retval="template/template.jsp";
+                   File file = new File(TemplatePath+"template/template.html");
+                   String File_content=this.ReadInFile(file);
+                   dbman.update("UPDATE registered_users SET"
+                           + " textual_content= '"+File_content+"'");
                }else if(rs.getInt("t_ID")==1){
                    System.out.println("TEMPLATE ID WAS 1");
                    retval="template/template.jsp";
@@ -64,6 +69,7 @@ public class PageAdder {
         
         return retval;
     }
+   
     public boolean addPage(){
         File f= new File(PATH+pagename+".jsp"); 
         if(f.canWrite()){
