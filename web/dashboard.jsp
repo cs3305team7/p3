@@ -86,8 +86,8 @@
         Base.DBManager dbman = new Base.DBManager();
         
 		try{
-                  /*      ResultSet resw_ID= dbman.query("SELECT w_ID FROM charity_sites WHERE" + "url=" +user.getCharityName());
-			if(resw_ID.first()){ 
+                       /* ResultSet resw_ID= dbman.query("SELECT w_ID FROM charity_sites WHERE" + "url=" +user.getCharityName());
+                        resw_ID.first();
                            int w_ID = resw_ID.getInt("w_ID");*/
                              ResultSet resp_ID = dbman.query("SELECT pagename FROM webpages WHERE w_ID = 1");
                              resp_ID.first();    
@@ -96,14 +96,11 @@
                                     while( resp_ID.next() ){
                                   %>
 
-                                  <p><a href="C://Users/sor4/p3-master/
-                                           <//% user.getCharityName(); %> /
-                                            <% //out.print(pagename);%>.
-                                    jsp">
+                                  <p>
                                             <%out.print(pagename);
                                          pagename = resp_ID.getString("pagename");%></a>
-                                                <a class="btn btn-primary btn-sm" href="editPage.jsp">Edit This Page<a>
-                                           <a class="btn btn-danger btn-sm" href="delete.jsp">Delete Page</a><p><%
+                                                <a class="btn btn-primary btn-sm" href="editContent.jsp">Edit This Page<a>
+                                           <a class="btn btn-danger btn-sm" href="index.html">Delete Page</a><p><%
                                            
                                        }
 
@@ -116,11 +113,11 @@
                                            <hr>
                                            
               <%try{
-                      /*  ResultSet resW_ID= dbman.query("SELECT w_ID FROM charity_sites WHERE" + "url=" +user.getCharityName());
-                        resW_ID.first())
-                        int W_ID = resW_ID.getInt("w_ID");*/		
+                       /*ResultSet resW_ID= dbman.query("SELECT w_ID FROM charity_sites WHERE url= 1");
+                        resW_ID.first();
+                        int W_ID = resW_ID.getInt("w_ID");	*/
 						
-                        ResultSet resusers = dbman.query("SELECT username FROM registered_users WHERE w_ID = 1" );
+                        ResultSet resusers = dbman.query("SELECT username FROM registered_users WHERE w_ID = 1");
                         resusers.first();
                         String users = resusers.getString("username");
                                 %><h3>Your registered users</h3><ul><%
@@ -130,7 +127,7 @@
                                 <%
                                         out.print(users);
                                         users = resusers.getString("username");
-                                %>  <a class="btn btn-danger btn-sm" href="deleteUser.jsp"> Delete This User</a></p><%
+                                %>  <a class="btn btn-danger btn-sm" href="index.html"> Delete This User</a></p><%
                                }
                         %></ul><%
 		}catch(Exception e){
