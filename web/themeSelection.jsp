@@ -70,58 +70,54 @@
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
   </head>
-    <body>
-        
-    <div class="container-narrow">
-
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contactUs.html">Contact</a></li>
-        </ul>
-        <h3 class="muted">Charity Management Website</h3>
-      </div>
-       
-      <div class="row-fluid marketing">
-        <div class="span6">
-          <h1>Congratulations on registering! </h1>
-             <p>You are now a couple steps away from setting up your Website!</p>
-        <a href="editHeader_footer.jsp" class="btn">Step 1</a>
-        <a href="editTemplate.jsp" class="btn">Step 2</a>
-         <a href="themeSelection.jsp" class="btn">Step 3</a>	
-         <section id="themeSection">
-         <h1 id="headingTheme"> Select Theme </h1>
-        <form id="themeSelection" action="processForm.jsp">
-        <br>
-        <input type="hidden" name="Theme" value="theme1"/>
-        <img id="imgs" src="../images/themeOne.png" alt="Charity Case" title=""  />
-        <input id="themebtn" type="submit" value="Select Theme">
-        <br>
-        </form>
-        <form id="themeSelection" action="processForm.jsp">
-        <br>
-        <input type="hidden" name="Theme" value="theme2"/>
-        <img id="imgs" src="../images/themeTwo.png" alt="Charity Case" title=""  />
-        <input id="themebtn" type="submit" value="Select Theme">
-        </form>
-        <form id="themeSelection" action="processForm.jsp">
-        <br>
-        <input type="hidden" name="Theme" value="theme3"/>
-        <img id="imgs" src="../images/themeThree.png" alt="Charity Case" title=""  />
-        <input id="themebtn" type="submit" value="Select Theme">
-        </form>
-         <a href="#wrapper" class="btn">Back to Top</a>
-        <a href="#" class="btn" onclick="history.go(-1)">Go Back</a>
-        <footer>&copy Team 7.</footer>
-       
-         </section>
-        </div>
-      </div>
+    <body>    
+        <div class="container-narrow">
+            <div class="masthead">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contactUs.html">Contact</a></li>
+            </ul>
+            <h3 class="muted">Charity Management Website</h3>
+            </div>  
+            <div class="row-fluid marketing">
+                <div class="span6">
+                    <h1>Congratulations on registering! </h1>
+                    <p>You are now a couple steps away from setting up your Website!</p>
+                    <a href="editHeader_footer.jsp" class="btn">Step 1</a>
+                    <a href="editTemplate.jsp" class="btn">Step 2</a>
+                    <a href="themeSelection.jsp" class="btn">Step 3</a>	
+                    <section id="themeSection">
+                        <h1 id="headingTheme"> Select Theme </h1>
+                        <form id="themeSelection" action="themeOne/index.jsp">
+                            <br>
+                                <input type="hidden" name="Theme" value="theme1"/>
+                                <img id="imgs" src="../images/themeOne.png" alt="Charity Case" title=""  />
+                                <input id="themebtn" type="submit" value="Select Theme">
+                                    <br>
+                                </form>
+                                <form id="themeSelection" action="themeTwo/index.jsp">
+                                    <br>
+                                    <input type="hidden" name="Theme" value="theme2"/>
+                                    <img id="imgs" src="../images/themeTwo.png" alt="Charity Case" title=""  />
+                                    <input id="themebtn" type="submit" value="Select Theme">
+                                </form>
+                                <form id="themeSelection" action="themeThree/index.jsp">
+                                    <br>
+                                    <input type="hidden" name="Theme" value="theme3"/>
+                                    <img id="imgs" src="../images/themeThree.png" alt="Charity Case" title=""  />
+                                    <input id="themebtn" type="submit" value="Select Theme">
+                                </form>
+                                <a href="#wrapper" class="btn">Back to Top</a>
+                                <a href="#" class="btn" onclick="history.go(-1)">Go Back</a>
+                                <footer>&copy Team 7.</footer>
+                        </section>
+                </div>
+         </div>
     </body>
 </html>
 
