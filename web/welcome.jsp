@@ -66,7 +66,6 @@
                     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
   </head>
-
   <body>
     <% 
             HttpSession sess = request.getSession(false);
@@ -94,9 +93,8 @@
         <div class="span6">
           <h1>Congratulations on registering! </h1>
              <p>You are now a couple steps away from setting up your Website!</p>
-                <a href="editHeader_footer.jsp" class="btn">Step 1</a>
-                <a href="editTemplate.jsp" class="btn">Step 2</a>
-                <a href="themeSelection.jsp" class="btn">Step 3</a>
+                <a href="themeSelection.jsp" class="btn">Step 1</a>
+          
 
         </div>
       </div>
