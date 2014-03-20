@@ -89,7 +89,7 @@ public class RegServlet extends HttpServlet {
         
         if(hidden_parameter.equals("register")){  
                 
-        DBManager manager = new DBManager();
+        //DBManager manager = new DBManager();
        
        String fname=request.getParameter("txtFName");
         String lname=request.getParameter("txtLName");
@@ -258,7 +258,7 @@ public class RegServlet extends HttpServlet {
                 
                 }
            else{
-               response.sendRedirect("register.jsp");
+              // response.sendRedirect("register.jsp");
            }
         }
         }else if (hidden_parameter.equals("login")) {
