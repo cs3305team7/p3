@@ -8,7 +8,7 @@
 <% 
     HttpSession sess = request.getSession(false); 
     if(sess!=null){
-        Base.User user =(Base.User)sess.getAttribute("User");
+        Base.User user =(Base.User)sess.getAttribute("user");
         String pageName= (String)sess.getAttribute("NewPageName");
         sess.removeAttribute("NewPageName");
         Base.PageAdder pageAdder=null;
@@ -18,7 +18,9 @@
             try{
                  pageAdder = new Base.PageAdder(user,pageName);
             }catch(Exception e){
-
+               
+                System.out.println("GET AWAY!");
+                 response.sendRedirect("themeSelection.jsp");
             }
         }
         if(pageAdder!=null){
@@ -27,7 +29,13 @@
             }
             else{
                 response.sendRedirect("themeSelection.jsp");
+                System.out.println("GET AWAY 2!");
             }
+        }else{
+            
+            response.sendRedirect("themeSelection.jsp");
+            System.out.println((pageName==null? "null":pageName.toString())+" pagename "+ (user==null?"null":user.toString())+" user");
+            System.out.println("GET AWAY 3!");
         }
     }
 %>
