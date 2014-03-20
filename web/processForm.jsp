@@ -1,4 +1,5 @@
 <%-- 
+
     Document   : processForm
     Created on : 17-Mar-2014, 22:27:19
     Author     : Thomas
@@ -124,7 +125,7 @@
                                        
                     response.sendRedirect("editHeader_footer.jsp");
                 }
-                else if((value=request.getParameter("text2"))!=null){
+                else if((value=request.getParameter("text4"))!=null){
                     Base.DBManager dbman = new Base.DBManager();
                     try{
                     dbman.update("INSERT INTO webpages(footer) VALUES "
