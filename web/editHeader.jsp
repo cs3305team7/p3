@@ -99,7 +99,7 @@
                     <form id="header" action="processForm.jsp" method="POST" >
                         <h2>Header Content</h2>
                         <div id="toolbar2" style="display: none;">
-                               <a data-wysihtml5-action="change_view">html view</a> 
+ 
                                <br> 
                                <br>
                                <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
@@ -125,6 +125,52 @@
       <div class="footer">
         <p>&copy; Team 7</p>
       </div>
+      <script>
+							
+							  
+							  	 var editor2 = new wysihtml5.Editor("textarea2", {
+								toolbar:        "toolbar2",
+								stylesheets:    "stylesheet.css",
+								parserRules:    wysihtml5ParserRules
+							  });
+							  
+							
+							  
+							
+							  
+							  var log2 = document.getElementById("log2");
+
+							  
+							  
+								editor2
+								.on("load", function() {
+								  log2.innerHTML += "";
+								})
+								.on("focus", function() {
+								  log2.innerHTML += "";
+								})
+								.on("blur", function() {
+								  log2.innerHTML += "";
+								})
+								.on("change", function() {
+								  log2.innerHTML += "";
+								})
+								.on("paste", function() {
+								  log2.innerHTML += "";
+								})
+								.on("newword:composer", function() {
+								  log2.innerHTML += "";
+								})
+								.on("undo:composer", function() {
+								  log2.innerHTML += "";
+								})
+								.on("redo:composer", function() {
+								  log2.innerHTML += "";
+								});
+								
+								
+								
+							</script>
 
     </div>    
                 <script src="../assets/js/jquery.js"></script>
@@ -142,4 +188,3 @@
                 <script src="../assets/js/bootstrap-typeahead.js"></script>     
     </body>
 </html>
-
