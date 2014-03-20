@@ -4,12 +4,6 @@
     Author     : as11
 --%>
 
-<%-- 
-    Document   : editTemplate
-    Created on : 08-Mar-2014, 17:58:32
-    Author     : as11
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -40,24 +34,42 @@
 			<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
 			<!--library used to test was jqurey 1.11.0-->
 		<script type="text/javascript">
-                        function create(param) {
-                            'use strict';
+                        $(document).ready(function(){
 
-                            var i;
-
-                            $("#screens").empty();
-
-                            for (i = 0; i < param; i += 1) {
-                                $('#screens').append('Name: <input type="text" name="name">  ');
-                                $('#screens').append('URL:<input type="text" name="name"><br>');
-                            }
-                        }
-
-                        $('#createTextboxes').change(function () {
-                            'use strict';
-                            create($(this).val());
-                        });
+	    var counter = 2;
 		
+	    $("#addButton").click(function () {
+				
+			if(counter>10){
+		        alert("Only 10 textboxes allow");
+		        return false;
+		    }   
+			
+			var newTextBoxDiv = $(document.createElement('div')).attr("id", 'TextBoxDiv' + counter);
+                newTextBoxDiv.after().html('<label>Textbox #'+ counter + ' : </label>' +
+				'<input type="text" name="name[]' + counter + 
+				'" id="textbox' + counter + '" value="" > <label>URL #'+ counter + ' : </label>' +
+				'<input type="text" name="url[]' + counter + 
+				'" id="url' + counter + '" value="" >');
+            
+			newTextBoxDiv.appendTo("#TextBoxesGroup");
+				
+		    counter++;
+	    });
+
+	    $("#removeButton").click(function () {
+		    if(counter==1){
+		        alert("No more textbox to remove");
+		        return false;
+		    }   
+	        counter--;
+			
+	        $("#TextBoxDiv" + counter).remove();
+		});
+		
+		
+		
+  });
                 </script>
 	</head>
 	<body>
@@ -74,19 +86,17 @@
 			<form id="nav-form" action="processForm.jsp" method="POST">
                               <h2>Navigation Form</h2>
                                       
-                                <label for='createTextboxes'>Number of boxes to create:</label>
-                                <select id='createTextboxes'>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                </select>
-                                <div id=screens></div>
-                                <input type="submit" />
-                                </form>
+                             <div id='TextBoxesGroup'>
+                                <div id="TextBoxDiv1">
+                                        <label>Textbox #1 : </label><input type='text' id='textbox1' name="name[]" >
+                                        <label>URL #1 : </label><input type='text' id='url1' name="url[]">
+                                </div>
+                            </div>
+                        <input type='button' value='Add Button' id='addButton'>
+                        <input type='button' value='Remove Button' id='removeButton'>
+                        <input type="submit" value="Submit">
+                        </form>
+
 			</nav> 
                
                         <script src="jquery-2.1.0.min.js"></script>
