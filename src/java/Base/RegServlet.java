@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "RegServlet", urlPatterns = {"/RegServlet"})
 public class RegServlet extends HttpServlet {
-    private String PATH ="C:/Users/as11.CS-DOMAIN/Downloads/p3-master/build/web/";//"C:/Users/Thomas/Documents/NetBeansProjects/Project1/Project1/build/web/";
+    private String PATH ="Z:/p3-masterV3/build/web/";//"C:/Users/Thomas/Documents/NetBeansProjects/Project1/Project1/build/web/";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
