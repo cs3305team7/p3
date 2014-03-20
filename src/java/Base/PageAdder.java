@@ -21,8 +21,9 @@ import java.sql.ResultSet;
 public class PageAdder {
     private User user;
     private String pagename;
-    private String PATH = "C:/Users/as11.CS-DOMAIN/Downloads/p3-master/build/web/";
-    private String TemplatePath="C:/Users/as11.CS-DOMAIN/Downloads/p3-master/build/web/";
+    private String PATH = "Z:/p3-masterV3/build/web/";
+    private String TemplatePath="Z:/p3-masterV3/build/web/";
+   
     public PageAdder(User user, String name)throws Exception{
         this.user=user;
         this.pagename=name;
@@ -39,15 +40,17 @@ public class PageAdder {
         DBManager dbman = new DBManager();
         ResultSet rs;
         String retval=null;
+        System.out.println("IN GET TEMPLATE");
         try{
            rs= dbman.query("SELECT t_ID,c_ID FROM website WHERE w_ID = (SELECT"
-                    + "w_ID FROM charity_sites "
-                    + "WHERE url ='"+user.getCharityName()+"'"+")");
-           
+                    + " w_ID FROM charity_sites "
+                    + "WHERE url = '"+user.getCharityName()+"'"+")");
+            System.out.println("QUERY EXECUTED");
            if(rs!=null && rs.first() && rs.isLast()){
                if(rs.getInt("t_ID")==0){
-                   
+                   retval="template/template.jsp";
                }else if(rs.getInt("t_ID")==1){
+                   System.out.println("TEMPLATE ID WAS 1");
                    retval="template/template.jsp";
                }else if(rs.getInt("t_ID")==2){
                    retval="template/template2.jsp";
@@ -55,14 +58,20 @@ public class PageAdder {
                
             }
         }catch(Exception e){
-            
+            e.printStackTrace();
+            System.out.println("QUERY EXCEPTION");
         }
         
         return retval;
     }
     public boolean addPage(){
         File f= new File(PATH+pagename+".jsp"); 
-        
+        if(f.canWrite()){
+            System.out.println("I HAVE PRIVELEGE");
+        }
+        else{
+            System.out.println("I DON'T HAVE PRIVELEGE");
+        }
         File Template = new File(TemplatePath);
         if(Template.exists()){
             String Text = ReadInFile(Template);
