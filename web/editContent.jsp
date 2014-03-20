@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="org.jsoup.select.Elements"%>
 <%@page import="java.io.File"%>
 <%@page import="org.jsoup.nodes.Element"%>
 <%@page import="org.jsoup.nodes.Document"%>
@@ -13,32 +14,37 @@
     HttpSession sess = request.getSession(false);
 
     if(sess !=null){
-        User user=(User)sess.getAttribute("user");
+        Base.User user=(Base.User)sess.getAttribute("user");
         String PAGE = request.getParameter("page");
         //get content either nav or text
         // header or footer
         // images maybe
 
-            //if nav
+            if(session.getAttribute("Nav")!=null){//if nav
             //read in nav elements
             //for each element 
             // make element string
             // create html string
-            Page mypage = new Page(user.getCharityName(),PAGE);
+               String[] linkelts= (String[])session.getAttribute("Nav") ;
+            Base.Page mypage = new Base.Page(user.getCharityName(),PAGE);
             //querydatabase for content
             String content = mypage.getContent();
             Document doc = Jsoup.parseBodyFragment(content);
             Element nav=doc.getElementById("EDITABLENAV");
-            for(int i=1;i<=10;i++){
-          /*
-                String html = "";//get this from input
-            
-                nav.append(html); //may need to insert into doc
-           */ //to be implemented
+            Elements uls=nav.getElementsByTag("ul");
+           Element ul = uls.get(1);
+            for(int i=0;i<linkelts.length;i++){
+          
+                String html = "<li><a href='"+ linkelts[i++]+"'> "+linkelts[i]+"</a></li>";//get this from input
+                
+                ul.append(html); //may need to insert into doc
+            //to be implemented
             }
-            Element ul = doc.select("ul").first(); // <div></div>
+            //now attach the ul back to the doc somehow
+            ul = doc.select("ul").first(); // <div></div>
             ul.append(html); // <div><p>lorem ipsum</p></div>
             //if header footer text
+            }
             String html1 = "";//get this from input.
             Document doc1 = Jsoup.parseBodyFragment(html);
             Element body1 = doc1.body();
