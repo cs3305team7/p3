@@ -19,25 +19,30 @@
         //System.out.println("SESSION EXISTS");
         HttpSession sess = request.getSession(false);
         if(sess !=null){
-            
+            System.out.println("tony here1");
             String PAGE = request.getParameter("page");
             Base.User user;
-            if(null!=(user=(Base.User)session.getAttribute("USER"))){
+            if(null!=(user=(Base.User)session.getAttribute("user"))){
                 String name =(String)session.getAttribute("form");
                 String value;
+                System.out.println("tony here2");
                 if((value=request.getParameter("Theme"))!=null){
                     //response.sendRedirect("");
                    // System.out.println("tHIS IS BROKEN");
+             System.out.println("tony here3");                   
                     if(value.equals("theme1")){
                         Base.DBManager dbman = new Base.DBManager();
-                        
+                        System.out.println("tony here4");                       
                         try{
+                    System.out.println("tony here5");
+                            response.sendRedirect("makePage.jsp");
                             user.getCharityName();
                            ResultSet t= dbman.query("SELECT w_ID "
                                     + "FROM charity_sites "
                                     + "WHERE url ="
                                     + ""+"'"+ user.getCharityName()+"'");
                            if(!t.first()){
+                            System.out.println("tony here6");                              
                                response.sendRedirect("editHeader.jsp");
                            }
                            int w_ID=t.getInt("w_ID");
@@ -45,11 +50,14 @@
                                     + "website SET t_ID = 1 , c_ID = 1"
                                     + " WHERE w_ID = '"
                                         +w_ID + "'");
+                                        System.out.println("tony here7");
                         }catch(Exception e){
+                            System.out.println("tony here8");
                             sess.setAttribute("Error", XMLParser.ErrorRetriever.Error.TEST);
                             e.printStackTrace();
                             response.sendRedirect("themeSelection.jsp");
                         }
+                        System.out.println("tony here9");
                         response.sendRedirect("makePage.jsp");
                     }
                     else if(value.equals("theme2")){
@@ -150,8 +158,8 @@
                                }
                     
             }
-            
-        }
+            }
+        
         %>
     </body>
 </html>
