@@ -97,6 +97,9 @@ public class RegServlet extends HttpServlet {
         String password=request.getParameter("txtPassword");
        String charityName=request.getParameter("txtCharityName");
        String UserName=request.getParameter("txtUName");
+       System.out.println("FNAME: "+fname+"\n LNAME: "+lname+"\n EMAIL: "+email+
+               "\n PASSWORD: "+password+"\n CHARITYNAME: "+ charityName+
+               "\n USERNAME: "+UserName);
         if(UserName!=null && fname!=null && lname!=null && email!=null &&
                 password!=null && charityName!=null){
             //checkChartityName is Free
@@ -106,7 +109,7 @@ public class RegServlet extends HttpServlet {
             DBManager dbman = new DBManager();
             try{
               ResultSet rs =  dbman.query("select * from "
-                      + "registered_users where username='"+UserName+"'"+
+                      + "website_admin where username='"+UserName+"'"+
                       "and email = "+"'"+email+"'");
               ResultSet rs2=dbman.query("select * "
                       + "from charity_sites where url="+"'"+charityName+"'");
@@ -133,7 +136,7 @@ public class RegServlet extends HttpServlet {
                         if( f.mkdir()){
                             User user =new User(UserName,fname, lname,
                             email, password,charityName);
-                            session.setAttribute("USER", user);
+                            session.setAttribute("user", user);
                             //SET SESSION VARS
                             Register.addWebsite(charityName);
                             Register.addWebAdmin(user);
@@ -258,7 +261,7 @@ public class RegServlet extends HttpServlet {
                 
                 }
            else{
-              // response.sendRedirect("register.jsp");
+              response.sendRedirect("register.jsp");
            }
         }
         }else if (hidden_parameter.equals("login")) {
@@ -278,13 +281,13 @@ public class RegServlet extends HttpServlet {
                          if(rs.getString("password").equals(mypassword)){
                             ResultSet rs1 = dbman.query("SELECT url FROM"+
                                     " charity_sites WHERE w_ID = "+"'"+
-                                    rs.getString("w_ID")+"'");
+                                    rs.getInt("w_ID")+"'");
                             if(rs1.first() && rs1.isLast()){
                                 user=new User(rs.getString("username"),
                                 rs.getString("firstname"),rs.getString("lastname"),
                                 rs.getString("email"),rs.getString("password"),
                                         rs1.getString("url"));
-                                session.setAttribute("USER", user);
+                                session.setAttribute("user", user);
                                 response.sendRedirect("dashboard.jsp");//tony is working on thsi file name might be different
                             }
                          }
