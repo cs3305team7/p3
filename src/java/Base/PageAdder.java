@@ -54,11 +54,34 @@ public class PageAdder {
                    File file = new File(TemplatePath+"template/template.html");
                    String File_content=this.ReadInFile(file);
                    dbman.update("UPDATE registered_users SET"
-                           + " textual_content= '"+File_content+"'");
+                           + " textual_content= '"+File_content+"' Where "
+                           + " w_ID = (SELECT w_ID From charity_sites WHERE "
+                           + " url = '"+user.getCharityName()+"' ) and p_ID =( "
+                           + "SELECT p_ID FROM webpages WHERE pagename = '"+pagename+"')"
+                           + " and w_ID = (SELECT w_ID From charity_sites WHERE "
+                           + " url= '"+user.getCharityName()+"')");
                }else if(rs.getInt("t_ID")==1){
+                   File file = new File(TemplatePath+"template/template.html");
+                   String File_content=this.ReadInFile(file);
+                   dbman.update("UPDATE registered_users SET"
+                           + " textual_content= '"+File_content+"' Where "
+                           + " w_ID = (SELECT w_ID From charity_sites WHERE "
+                           + " url = '"+user.getCharityName()+"' ) and p_ID =( "
+                           + "SELECT p_ID FROM webpages WHERE pagename = '"+pagename+"')"
+                           + " and w_ID = (SELECT w_ID From charity_sites WHERE "
+                           + " url= '"+user.getCharityName()+"')");
                    System.out.println("TEMPLATE ID WAS 1");
                    retval="template/template.jsp";
                }else if(rs.getInt("t_ID")==2){
+                   File file = new File(TemplatePath+"template/template2.html");
+                   String File_content=this.ReadInFile(file);
+                   dbman.update("UPDATE registered_users SET"
+                           + " textual_content= '"+File_content+"' Where "
+                           + " w_ID = (SELECT w_ID From charity_sites WHERE "
+                           + " url = '"+user.getCharityName()+"' ) and p_ID =( "
+                           + "SELECT p_ID FROM webpages WHERE pagename = '"+pagename+"')"
+                           + " and w_ID = (SELECT w_ID From charity_sites WHERE "
+                           + " url= '"+user.getCharityName()+"')");
                    retval="template/template2.jsp";
                }
                
