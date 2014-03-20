@@ -18,6 +18,9 @@
     if(sess !=null){
         Base.User user=(Base.User)sess.getAttribute("user");
         String PAGE = request.getParameter("page");
+        Base.Page mypage = new Base.Page(user.getCharityName(),PAGE);
+        String content = mypage.getContent();
+        Document doc = Jsoup.parseBodyFragment(content);
         //get content either nav or text
         // header or footer
         // images maybe
@@ -29,10 +32,8 @@
             // create html string
                String[] linknames= request.getParameterValues("name");
                String[] linkvals=request.getParameterValues("url");
-            Base.Page mypage = new Base.Page(user.getCharityName(),PAGE);
+            
             //querydatabase for content
-            String content = mypage.getContent();
-            Document doc = Jsoup.parseBodyFragment(content);
             Element nav=doc.getElementById("EDITABLENAV");
             Elements uls=nav.getElementsByTag("ul");
            Element ul = uls.get(0);

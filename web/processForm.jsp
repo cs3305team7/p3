@@ -50,6 +50,7 @@
                             e.printStackTrace();
                             response.sendRedirect("themeSelection.jsp");
                         }
+                        response.sendRedirect("makePage.jsp");
                     }
                     else if(value.equals("theme2")){
                         Base.DBManager dbman = new Base.DBManager();
@@ -71,6 +72,7 @@
                         }catch(Exception e){
                             response.sendRedirect("themeSelection.jsp");
                         }
+                        response.sendRedirect("makePage.jsp");
                     }
                     else if(value.equals("theme3")){
                         Base.DBManager dbman = new Base.DBManager();
@@ -92,6 +94,7 @@
                         }catch(Exception e){
                             response.sendRedirect("themeSelection.jsp");
                         }
+                        response.sendRedirect("makePage.jsp");
                     }
                     else{
                         //session.setErrors
