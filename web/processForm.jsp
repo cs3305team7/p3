@@ -16,9 +16,10 @@
     <body>
         <%
 
-        
+        //System.out.println("SESSION EXISTS");
         HttpSession sess = request.getSession(false);
         if(sess !=null){
+            
             String PAGE = request.getParameter("page");
             Base.User user;
             if(null!=(user=(Base.User)session.getAttribute("USER"))){
@@ -26,6 +27,7 @@
                 String value;
                 if((value=request.getParameter("Theme"))!=null){
                     //response.sendRedirect("");
+                   // System.out.println("tHIS IS BROKEN");
                     if(value.equals("theme1")){
                         Base.DBManager dbman = new Base.DBManager();
                         
@@ -93,11 +95,13 @@
                     }
                     else{
                         //session.setErrors
+                       
                         response.sendRedirect("themeSelection.jsp");
                     }
 
                 }
-                else if((value=request.getParameter("text1"))!=null){
+                else if((value=request.getParameter("text2"))!=null){
+                  // out.println("I AM HERE WORK PLEASE");
                     Base.DBManager dbman = new Base.DBManager();
                     try{
                         ResultSet t= dbman.query("SELECT w_ID "
@@ -106,11 +110,12 @@
                                     + ""+"'"+ user.getCharityName()+"'");
                            if(!t.first()){
                                session.setAttribute("Error",XMLParser.ErrorRetriever.Error.TEST);
+                               System.out.println("I'm in the not if");
                                response.sendRedirect("editHeader_footer.jsp");
                            }
                           
                            int w_ID=t.getInt("w_ID");
-                           System.out.println("value is: "+value);
+                          // System.out.println("value is: "+value);
                            System.out.println("w_ID is: "+w_ID);
                          dbman.update("UPDATE  "
                                     + "webpages SET header = '"+value+"'"
@@ -134,6 +139,10 @@
                         
                     }
                 }
+                else{
+                     //out.println("THIS IS A PROBLEM I DON'T UNDERSTAND THIS");
+                     response.sendRedirect("welcome.jsp");
+                               }
                     
             }
             
