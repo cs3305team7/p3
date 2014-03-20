@@ -46,14 +46,14 @@ public class PageAdder {
         try{
            rs= dbman.query("SELECT t_ID,c_ID FROM website WHERE w_ID = (SELECT"
                     + " w_ID FROM charity_sites "
-                    + "WHERE url = '"+user.getCharityName()+"'"+")");
+                    + "WHERE url = '"+user.getCharityName()+"' "+")");
             System.out.println("QUERY EXECUTED");
            if(rs!=null && rs.first() && rs.isLast()){
                if(rs.getInt("t_ID")==0){
                    retval="template/template.jsp";
                    File file = new File(TemplatePath+"template/template.html");
                    String File_content=this.ReadInFile(file);
-                   dbman.update("UPDATE registered_users SET"
+                   dbman.update("UPDATE regular_content SET"
                            + " textual_content= '"+File_content+"' Where "
                            + " w_ID = (SELECT w_ID From charity_sites WHERE "
                            + " url = '"+user.getCharityName()+"' ) and p_ID =( "
@@ -63,7 +63,7 @@ public class PageAdder {
                }else if(rs.getInt("t_ID")==1){
                    File file = new File(TemplatePath+"template/template.html");
                    String File_content=this.ReadInFile(file);
-                   dbman.update("UPDATE registered_users SET"
+                   dbman.update("UPDATE regular_content SET"
                            + " textual_content= '"+File_content+"' Where "
                            + " w_ID = (SELECT w_ID From charity_sites WHERE "
                            + " url = '"+user.getCharityName()+"' ) and p_ID =( "
@@ -75,7 +75,7 @@ public class PageAdder {
                }else if(rs.getInt("t_ID")==2){
                    File file = new File(TemplatePath+"template/template2.html");
                    String File_content=this.ReadInFile(file);
-                   dbman.update("UPDATE registered_users SET"
+                   dbman.update("UPDATE regular_content SET"
                            + " textual_content= '"+File_content+"' Where "
                            + " w_ID = (SELECT w_ID From charity_sites WHERE "
                            + " url = '"+user.getCharityName()+"' ) and p_ID =( "
