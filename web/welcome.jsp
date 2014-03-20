@@ -1,9 +1,26 @@
 <%-- 
-    Document   : welcome
-    Created on : 09-Mar-2014, 16:08:04
+    Document   : header_footer
+    Created on : 08-Mar-2014, 17:57:58
     Author     : as11
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+    <% /*
+        Page p = new Page("","");
+        out.print(p.createPage());
+    */%>
+ <%
+
+    HttpSession sess = request.getSession(false);
+    if(sess !=null){
+        Base.User user=(Base.User)sess.getAttribute("user");
+        String PAGE = request.getParameter("page");
+        XMLParser.ErrorRetriever.Error e = (XMLParser.ErrorRetriever.Error)sess.getAttribute("Error");
+        if(e!=null){
+            out.println("<h1>"+e.toString()+"</h1>");
+        }
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,42 +79,27 @@
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
   </head>
-  <body>
-    <% 
-            HttpSession sess = request.getSession(false);
-            if(sess !=null){
-                Base.User user=(Base.User)sess.getAttribute("user");
-                String PAGE = request.getParameter("page");
-            }else{
-                response.sendRedirect("register.jsp");
-            }
-             %>
-
-    <div class="container-narrow">
-
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contactUs.html">Contact</a></li>
-        </ul>
-        <h3 class="muted">Charity Management Website</h3>
-      </div>
-
-
-      <div class="row-fluid marketing">
-        <div class="span6">
-          <h1>Congratulations on registering! </h1>
-             <p>You are now a couple steps away from setting up your Website!</p>
-                <a href="themeSelection.jsp" class="btn">Step 1</a>
-          
-
+    <body>    
+        <div class="container-narrow">
+            <div class="masthead">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contactUs.html">Contact</a></li>
+            </ul>
+            <h3 class="muted">Charity Management Website</h3>
+            </div>  
+            <div class="row-fluid marketing">
+                <div class="span6">
+                    <h1>Congratulations on registering! </h1>
+                    <p>You are now a couple steps away from setting up your Website!</p> 
+                <a href="themeSelection.jsp" class="btn btn-success">Step 1</a>
+            </div>
         </div>
-      </div>
 
       <hr>
 
@@ -105,26 +107,20 @@
         <p>&copy; Team 7</p>
       </div>
 
-    </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap-transition.js"></script>
-    <script src="../assets/js/bootstrap-alert.js"></script>
-    <script src="../assets/js/bootstrap-modal.js"></script>
-    <script src="../assets/js/bootstrap-dropdown.js"></script>
-    <script src="../assets/js/bootstrap-scrollspy.js"></script>
-    <script src="../assets/js/bootstrap-tab.js"></script>
-    <script src="../assets/js/bootstrap-tooltip.js"></script>
-    <script src="../assets/js/bootstrap-popover.js"></script>
-    <script src="../assets/js/bootstrap-button.js"></script>
-    <script src="../assets/js/bootstrap-collapse.js"></script>
-    <script src="../assets/js/bootstrap-carousel.js"></script>
-    <script src="../assets/js/bootstrap-typeahead.js"></script>
-
-  </body>
+    </div>    
+                <script src="../assets/js/jquery.js"></script>
+                <script src="../assets/js/bootstrap-transition.js"></script>
+                <script src="../assets/js/bootstrap-alert.js"></script>
+                <script src="../assets/js/bootstrap-modal.js"></script>
+                <script src="../assets/js/bootstrap-dropdown.js"></script>
+                <script src="../assets/js/bootstrap-scrollspy.js"></script>
+                <script src="../assets/js/bootstrap-tab.js"></script>
+                <script src="../assets/js/bootstrap-tooltip.js"></script>
+                <script src="../assets/js/bootstrap-popover.js"></script>
+                <script src="../assets/js/bootstrap-button.js"></script>
+                <script src="../assets/js/bootstrap-collapse.js"></script>
+                <script src="../assets/js/bootstrap-carousel.js"></script>
+                <script src="../assets/js/bootstrap-typeahead.js"></script>     
+    </body>
 </html>
-
 
