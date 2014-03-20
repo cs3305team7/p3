@@ -50,38 +50,55 @@ public class PageAdder {
             System.out.println("QUERY EXECUTED");
            if(rs!=null && rs.first() && rs.isLast()){
                if(rs.getInt("t_ID")==0){
-                   retval="template/template.jsp";
                    File file = new File(TemplatePath+"template/template.html");
                    String File_content=this.ReadInFile(file);
-                   dbman.update("UPDATE regular_content SET"
-                           + " textual_content= '"+File_content+"' Where "
-                           + " w_ID = (SELECT w_ID From charity_sites WHERE "
-                           + " url = '"+user.getCharityName()+"' ) and p_ID =( "
-                           + "SELECT p_ID FROM webpages WHERE pagename = '"+pagename+"')"
-                           + " and w_ID = (SELECT w_ID From charity_sites WHERE "
-                           + " url= '"+user.getCharityName()+"')");
+                   ResultSet res= dbman.query("SELECT w_ID From charity_sites WHERE "
+                           + " url = '"+user.getCharityName()+"'");
+                   if(res.first()){
+                    int w_ID = res.getInt("w_ID");
+                        res=dbman.query("SELECT p_ID FROM webpages WHERE pagename = '"+pagename+"')"
+                           + " and w_ID ="+w_ID+")");
+                        if(res.first()){
+                           int p_ID = res.getInt("p_ID");
+                           dbman.update("INSERT INTO regular_content(w_ID,textual_content,"
+                                   + "p_ID, pos_index) VALUES("+w_ID+","+File_content+","
+                                   + ""+ p_ID+","+0+")");
+                        }
+                   }
+                    retval="template/template.jsp";
                }else if(rs.getInt("t_ID")==1){
-                   File file = new File(TemplatePath+"template/template.html");
+                    File file = new File(TemplatePath+"template/template.html");
                    String File_content=this.ReadInFile(file);
-                   dbman.update("UPDATE regular_content SET"
-                           + " textual_content= '"+File_content+"' Where "
-                           + " w_ID = (SELECT w_ID From charity_sites WHERE "
-                           + " url = '"+user.getCharityName()+"' ) and p_ID =( "
-                           + "SELECT p_ID FROM webpages WHERE pagename = '"+pagename+"')"
-                           + " and w_ID = (SELECT w_ID From charity_sites WHERE "
-                           + " url= '"+user.getCharityName()+"')");
-                   System.out.println("TEMPLATE ID WAS 1");
+                   ResultSet res= dbman.query("SELECT w_ID From charity_sites WHERE "
+                           + " url = '"+user.getCharityName()+"'");
+                   if(res.first()){
+                    int w_ID = res.getInt("w_ID");
+                        res=dbman.query("SELECT p_ID FROM webpages WHERE pagename = '"+pagename+"')"
+                           + " and w_ID ="+w_ID+")");
+                        if(res.first()){
+                           int p_ID = res.getInt("p_ID");
+                           dbman.update("INSERT INTO regular_content(w_ID,textual_content,"
+                                   + "p_ID, pos_index) VALUES("+w_ID+","+File_content+","
+                                   + ""+ p_ID+","+0+")");
+                        }
+                   }
                    retval="template/template.jsp";
                }else if(rs.getInt("t_ID")==2){
                    File file = new File(TemplatePath+"template/template2.html");
                    String File_content=this.ReadInFile(file);
-                   dbman.update("UPDATE regular_content SET"
-                           + " textual_content= '"+File_content+"' Where "
-                           + " w_ID = (SELECT w_ID From charity_sites WHERE "
-                           + " url = '"+user.getCharityName()+"' ) and p_ID =( "
-                           + "SELECT p_ID FROM webpages WHERE pagename = '"+pagename+"')"
-                           + " and w_ID = (SELECT w_ID From charity_sites WHERE "
-                           + " url= '"+user.getCharityName()+"')");
+                   ResultSet res= dbman.query("SELECT w_ID From charity_sites WHERE "
+                           + " url = '"+user.getCharityName()+"'");
+                   if(res.first()){
+                    int w_ID = res.getInt("w_ID");
+                        res=dbman.query("SELECT p_ID FROM webpages WHERE pagename = '"+pagename+"')"
+                           + " and w_ID ="+w_ID+")");
+                        if(res.first()){
+                           int p_ID = res.getInt("p_ID");
+                           dbman.update("INSERT INTO regular_content(w_ID,textual_content,"
+                                   + "p_ID, pos_index) VALUES("+w_ID+","+File_content+","
+                                   + ""+ p_ID+","+0+")");
+                        }
+                   }
                    retval="template/template2.jsp";
                }
                
