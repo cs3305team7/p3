@@ -122,52 +122,116 @@
 });
 ///////////////////////////////////////////////////////////////////////////////////////////// end of textarea for javascript
 </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
 	</head>
-	<body>
+	<body>               
+            <div class="container-narrow">
+             <div class="masthead">
+            <ul class="nav nav-pills pull-right">
+             <li><a href="#">Home</a></li>
+             <li><a href="about.html">About</a></li>
+             <li><a href="contactUs.html">Contact</a></li>
+        </ul>
+        <h3 class="muted">Charity Management Website</h3>
+      </div>
                 
-	  <div id="wrapper">
-	  <a href="editHeader_footer.jsp" class="btn">Step 1</a>
-        <a href="editTemplate.jsp" class="btn">Step 2</a>
-         <a href="themeSelection.jsp" class="btn">Step 3</a>	
-	   <div>
-		</div> 
-			<nav id="EDITABLENAV">
-						<form id="nav-form">
-                              <h2>Navigation Form</h2>
-						 <%/** out.print(p.Get("EDITABLENAV"));**/%><br>
-						 <br>
-						 <div id='TextBoxesGroup'>
-								<div id="TextBoxDiv1">
-									<label>Name #0 : </label><input type='textbox' id='textbox' >
-									<label> URL #0: </label><input type='textbox' id='url' >
-								</div>
-							</div>
-							<input type='button' value='Add Button' id='addButton'>
-							<input type='button' value='Remove Button' id='removeButton'>
-							<input type='button' value='Get TextBox Value' id='getButtonValue'>
-						 </form>
-			</nav> 
-                    <aside id="PICS">
-                        <h2>Images Column</h2>
-                        <%/** out.print(p.Get("PICS"));*/%><br> <br>
-						IMAGE UPLOAD INCOMPLETE!
-		   </aside>
-
-
-                    <div id="CONTENT">
-                        
-						<form name="ajaxform" id="ajaxform">
+      <div class="row-fluid marketing">
+        <div class="span6">
+                <a href="editHeader_footer.jsp" class="btn">Step 1</a>
+                <a href="editTemplate.jsp" class="btn">Step 2</a>
+                <a href="themeSelection.jsp" class="btn">Step 3</a>	
+                <nav>
+                    <form id="nav-form">
+                        <h2>Navigation Form</h2>
+			<%/** out.print(p.Get("EDITABLENAV"));**/%>
+                        <br>
+                        <br>
+                        <div id='TextBoxesGroup'>
+                            <div id="TextBoxDiv1">
+                                <label>Name #0 : </label><input type='textbox' id='textbox' >
+                                <label> URL #0: </label><input type='textbox' id='url' >
+                            </div>
+                        </div>
+                        <input type='button' value='Add Button' id='addButton'>
+                        <input type='button' value='Remove Button' id='removeButton'>
+                        <input type='button' value='Get TextBox Value' id='getButtonValue'>
+                    </form>
+                </nav> 
+                <aside>
+                    <h2>Images Column</h2>
+                    <%/** out.print(p.Get("PICS"));*/%>
+                    <br> 
+                    <br>
+                    <p>IMAGE UPLOAD INCOMPLETE!</p>
+                </aside>
+                <div> 
+                        <form name="ajaxform" id="ajaxform">
                            <h2>Main Content</h2>
-						  <div id="toolbar" style="display: none;">
-						  <a data-wysihtml5-action="change_view">html view</a> <br> <br>
-							<a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
-							<a data-wysihtml5-command="italic" title="CTRL+I">italic</a> |
-							<a data-wysihtml5-command="createLink">insert link</a> |
-							<a data-wysihtml5-command="insertImage">insert image</a> |
-							<a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">h1</a> |
-							<a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a> |
-							<a data-wysihtml5-command="insertUnorderedList">insertUnorderedList</a> |
-							<a data-wysihtml5-command="insertOrderedList">insertOrderedList</a>
+                           <div id="toolbar" style="display: none;">
+						  <a data-wysihtml5-action="change_view" class="btn">html view</a> <br> <br>
+							<a data-wysihtml5-command="bold" title="CTRL+B" class="btn">bold</a> 
+							<a data-wysihtml5-command="italic" title="CTRL+I" class="btn">italic</a> 
+							<a data-wysihtml5-command="createLink" class="btn">insert link</a> 
+							<a data-wysihtml5-command="insertImage" class="btn">insert image</a> 
+							<a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1" class="btn">h1</a> 
+							<a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2" class="btn">h2</a> 
+							<a data-wysihtml5-command="insertUnorderedList" class="btn">insertUnorderedList</a> 
+							<a data-wysihtml5-command="insertOrderedList" class="btn">insertOrderedList</a>
 							
 							
 							<div data-wysihtml5-dialog="createLink" style="display: none;">
@@ -246,7 +310,20 @@
 								
 							</script>
                                                     
-		</div> <!--end of wrapper-->            
+		</div> <!--end of wrapper-->   
+                <script src="../assets/js/jquery.js"></script>
+                <script src="../assets/js/bootstrap-transition.js"></script>
+                <script src="../assets/js/bootstrap-alert.js"></script>
+                <script src="../assets/js/bootstrap-modal.js"></script>
+                <script src="../assets/js/bootstrap-dropdown.js"></script>
+                <script src="../assets/js/bootstrap-scrollspy.js"></script>
+                <script src="../assets/js/bootstrap-tab.js"></script>
+                <script src="../assets/js/bootstrap-tooltip.js"></script>
+                <script src="../assets/js/bootstrap-popover.js"></script>
+                <script src="../assets/js/bootstrap-button.js"></script>
+                <script src="../assets/js/bootstrap-collapse.js"></script>
+                <script src="../assets/js/bootstrap-carousel.js"></script>
+                <script src="../assets/js/bootstrap-typeahead.js"></script>
 	</body>
 </html>
 
