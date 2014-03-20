@@ -10,12 +10,24 @@
     if(sess!=null){
         Base.User user =(Base.User)sess.getAttribute("User");
         String pageName= (String)sess.getAttribute("NewPageName");
-        Base.PageAdder pageAdder = new Base.PageAdder(user,pageName);
-        if(pageAdder.addPage()){
+        sess.removeAttribute("NewPageName");
+        Base.PageAdder pageAdder=null;
+        if(pageName !=null && user != null){
             
+        
+            try{
+                 pageAdder = new Base.PageAdder(user,pageName);
+            }catch(Exception e){
+
+            }
         }
-        else{
-            
+        if(pageAdder!=null){
+            if(pageAdder.addPage()){
+                response.sendRedirect("editHeader.jsp");
+            }
+            else{
+                response.sendRedirect("themeSelection.jsp");
+            }
         }
     }
 %>

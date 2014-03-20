@@ -10,6 +10,7 @@
     if(sess !=null){
         Base.User user=(Base.User)sess.getAttribute("user");
         String PAGE = request.getParameter("page");
+        sess.setAttribute("NewPageName", "index");
     }
 %>
 <!DOCTYPE html>
