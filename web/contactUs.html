@@ -1,3 +1,7 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,6 +51,7 @@
       }
     </style>
     <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -74,7 +79,46 @@
         <h3 class="muted">Charity Management Website</h3>
       </div>
 
+        <div id="contacts">
+   <div class="row">	
+     <!-- Alignment -->
+	<div class="col-sm-offset-3 col-sm-6">
+	   <!-- Form itself -->
+          <form name="sentMessage" class="well" id="contactForm"  novalidate>
+	       <legend>Contact me</legend>
+		 <div class="control-group">
+                    <div class="controls">
+			<input type="text" class="form-control" 
+			   	   placeholder="Full Name" id="name" required
+			           data-validation-required-message="Please enter your name" />
+			  <p class="help-block"></p>
+		   </div>
+	         </div> 	
+                <div class="control-group">
+                  <div class="controls">
+			<input type="email" class="form-control" placeholder="Email" 
+			   	            id="email" required
+			   		   data-validation-required-message="Please enter your email" />
+		</div>
+	    </div> 	
 
+               <div class="control-group">
+                 <div class="controls">
+				 <textarea rows="10" cols="100" class="form-control" 
+                       placeholder="Message" id="message" required
+		       data-validation-required-message="Please enter your message" minlength="5" 
+                       data-validation-minlength-message="Min 5 characters" 
+                        maxlength="999" style="resize:none"></textarea>
+		</div>
+               </div> 		 
+	     <div id="success"> </div> <!-- For success/fail messages -->
+	    <button type="submit" class="btn btn-primary pull-right">Send</button><br />
+          </form>
+	</div>
+      </div>
+    </div>
+
+        
       <div class="row-fluid marketing">
         <div class="span6">
 			<form class="form-signin" role="form">
@@ -116,6 +160,11 @@
     <script src="../assets/js/bootstrap-collapse.js"></script>
     <script src="../assets/js/bootstrap-carousel.js"></script>
     <script src="../assets/js/bootstrap-typeahead.js"></script>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+ <script src="bootstrap.min.js"></script>
+ <script src="jqBootstrapValidation.js"></script>
+ <script src="contact_me.js"></script>
 
   </body>
 </html>
