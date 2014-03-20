@@ -96,20 +96,20 @@
          <a href="themeSelection.jsp" class="btn">Step 3</a>	
          <section id="themeSection">
          <h1 id="headingTheme"> Select Theme </h1>
-        <form id="themeSelection" action="themeOne/index.jsp">
+        <form id="themeSelection" action="processForm.jsp">
         <br>
         <input type="hidden" name="Theme" value="theme1"/>
         <img id="imgs" src="../images/themeOne.png" alt="Charity Case" title=""  />
         <input id="themebtn" type="submit" value="Select Theme">
         <br>
         </form>
-        <form id="themeSelection" action="themeTwo/index.jsp">
+        <form id="themeSelection" action="processForm.jsp">
         <br>
         <input type="hidden" name="Theme" value="theme2"/>
         <img id="imgs" src="../images/themeTwo.png" alt="Charity Case" title=""  />
         <input id="themebtn" type="submit" value="Select Theme">
         </form>
-        <form id="themeSelection" action="themeThree/index.jsp">
+        <form id="themeSelection" action="processForm.jsp">
         <br>
         <input type="hidden" name="Theme" value="theme3"/>
         <img id="imgs" src="../images/themeThree.png" alt="Charity Case" title=""  />
