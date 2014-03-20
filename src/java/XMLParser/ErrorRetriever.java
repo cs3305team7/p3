@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,7 +17,7 @@ import org.w3c.dom.NodeList;
  */
 public class ErrorRetriever extends DOMParser{
     private DOMParser DOM;
-    public final static String ERRORS_FILE="C:/Users/Thomas\\Documents\\GitHub\\p3\\src\\java\\XMLParser/errors.xml";
+    public final static String ERRORS_FILE="Z:/p3-masterV3/src/java/XMLParser/errors.xml";
     public static enum Error{
         TEST,WEBDIR_NOT_MADE,DATABASE_CONNECTION,
         CHARITY_ALREADY_EXISTS;
